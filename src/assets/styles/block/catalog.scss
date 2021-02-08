@@ -1,0 +1,39 @@
+.catalog {
+  padding: 60px 0 80px;
+  &__title{
+    padding-bottom: 40px;
+  }
+  &__item {
+    width: 25%;
+    padding: 40px;
+    height: 320px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &:hover{
+      & > .catalog__name{
+        color: #fff;
+      }
+      &::before{
+        display: none;
+      }
+    }
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $gray;
+      opacity: .5;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__name{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+  }
+}

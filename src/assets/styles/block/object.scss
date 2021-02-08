@@ -1,0 +1,24 @@
+.object{
+  padding: 40px 0;
+  &__title{
+    padding-bottom: 50px;
+  }
+  &__img{
+    margin-bottom: 30px;
+  }
+  &__name{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 15px;
+
+  }
+  &__descr{
+    padding-bottom: 20px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &__btn{
+    padding: 12.5px 18px;
+  }
+}

@@ -1,0 +1,24 @@
+.btn{
+  display: inline-block;
+  background: $blueGrad;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: $radiusBtn;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  &:hover{
+    background: $blueGradHover;
+    color: #fff;
+  }
+  &-blue{
+    color: $blue;
+    background: #fff;
+    border: 2px solid $blue;
+    &:hover{
+      background: $blueGradHover;
+      color: #fff;
+      border: 2px solid transparent;
+    }
+  }
+}

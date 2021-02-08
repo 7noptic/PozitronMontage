@@ -1,0 +1,28 @@
+.tags {
+  padding: 50px 0;
+  &__item {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12.5px 14px;
+    background: $gray;
+    border-radius: $radiusBtn;
+    margin: 0 20px 20px 0;
+    &:hover{
+      color: #fff;
+      background: $blueGradHover;
+    }
+  }
+  &__next{
+    position: absolute;
+    right: 0px;
+    top: 44%;
+    z-index: 10;
+  }
+  &__prev{
+    position: absolute;
+    left: 15px;
+    top: 44%;
+    z-index: 10;
+    transform: rotate(180deg);
+  }
+}

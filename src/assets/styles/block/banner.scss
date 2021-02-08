@@ -1,0 +1,47 @@
+.banner {
+  padding: 60px 0 60px;
+
+  &__adv {
+    display: block;
+    width: 130%;
+    padding: 27px 0 27px 10px;
+    font-size: 16px;
+    opacity: 0.5;
+    border-top: 1px solid #000;
+    &:last-of-type{
+      border-bottom: 1px solid #000;
+    }
+    &:hover{
+      opacity: 1;
+    }
+  }
+  &__bg{
+    background-position: top right;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__text{
+    padding-left: calc(10% + 50px);
+  }
+  &__title{
+    font-weight: 300;
+    font-size: 60px;
+    padding-bottom: 10px;
+    line-height: 73px;
+    letter-spacing: -0.103636px;
+  }
+  &__price{
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 73px;
+    letter-spacing: -0.103636px;
+    padding-bottom: 40px;
+  }
+  &__descr{
+    font-size: 14px;
+    padding-bottom: 40px;
+  }
+  &__btn{
+    padding: 12.5px 25.5px;
+  }
+}
