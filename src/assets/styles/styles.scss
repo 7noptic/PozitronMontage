@@ -6,13 +6,15 @@
 
 /* А */
 @import "block/articles-block";
+@import "block/about-block";
+@import "block/awards-block";
 /* В */
 @import "block/bootstrap";
 @import "block/btn";
 @import "block/banner";
 @import "block/board";
 /* C */
-@import "block/catalog";
+@import "block/catalog-block";
 @import "block/card";
 /* D */
 
@@ -21,6 +23,7 @@
 /* F */
 @import "block/form";
 @import "block/form-subscribe";
+@import "block/footer";
 /* G */
 
 /* H */
@@ -36,7 +39,11 @@
 /* L */
 
 /* M */
-
+@import "block/modal-region";
+@import "block/modal-call";
+@import "block/modal-form";
+@import "block/modal-one-click";
+@import "block/modal-assortment";
 /* N */
 @import "block/line-nav";
 /* O */
@@ -50,6 +57,7 @@
 @import "block/rating-star";
 /* S */
 @import "block/swiper";
+@import "block/sidebar";
 /* T */
 @import "block/title";
 @import "block/tags";

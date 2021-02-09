@@ -1,0 +1,70 @@
+.modal-one-click{
+    background-color: $gray;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    right: -1000%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1000;
+    border-left: 1px solid $blue;
+    display: flex;
+    align-items: center;
+    &.active {
+      right: 0;
+    }
+    &__title{
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    &__text{
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 40px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    &__wrapper {
+      padding: 80px;
+      background-color: $gray;
+      width: 100%;
+      max-width: 570px;
+      height: auto;
+      overflow: auto;
+
+
+    }
+
+
+
+
+    &__exit {
+      font-size: 26px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      cursor: pointer;
+      z-index: 1001;
+      &::before{
+        width: 100%;
+        height: 100%;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &:hover {
+          .modal-call__exit > path {
+            fill: $blue;
+            stroke: $blue;
+          }
+        }
+      }
+      & path, & rect {
+        transition: $transition4;
+      }
+
+
+    }
+
+}

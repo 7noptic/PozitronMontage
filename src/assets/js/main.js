@@ -6,6 +6,75 @@ import GLightbox from 'glightbox';
 Swiper.use([Navigation, Pagination]);
 window.addEventListener('DOMContentLoaded', () => {
     const lightbox = GLightbox({});
+    let headerMenu = document.querySelector('.header__nav'),
+        html = document.querySelector('html'),
+        body = document.querySelector('body');
+
+    /* MODAL */
+    let modalBlock = document.querySelector('.js-sidebars'),
+        allModal = document.querySelectorAll('.js-sidebars > section'),
+        modalCall = document.querySelector('.modal-call'),
+        modalRegion = document.querySelector('.modal-region'),
+        modalOneClick = document.querySelector('.modal-one-click'),
+        modalAssortment = document.querySelector('.modal-assortment'),
+        regionSelect = document.querySelectorAll('.modal-region__link'),
+        regionBtn = document.querySelector('.js-region-city');
+
+    document.addEventListener('click', e => {
+
+        let target = e.target;
+
+        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit') || target.classList.contains('modal-call__btn'))) {
+            openCloseModal(e, modalCall);
+        }
+        if (target && (target.classList.contains('js-card-one-click') || target.classList.contains('modal-one-click__exit') || target.classList.contains('modal-one-click__btn'))) {
+            openCloseModal(e, modalOneClick);
+        }
+        if (target && (target.classList.contains('js-assortment') || target.classList.contains('modal-assortment__exit') || target.classList.contains('modal-assortment__btn'))) {
+            openCloseModal(e, modalAssortment);
+        }
+        if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {
+            openCloseModal(e, modalRegion);
+        }
+        if (target.classList.contains('modal-region__link')) {
+
+            regionSelect.forEach(item => {
+                if (item == target) {
+                    regionBtn.innerHTML = item.innerHTML;
+                }
+            });
+            openCloseModal(e, modalRegion);
+        } else if (target.classList.contains('js-region-close')) {
+            let city = document.querySelector('.js-select-city');
+            regionBtn.innerHTML = city.innerHTML;
+            openCloseModal(e, modalRegion);
+        }
+
+
+        /* ЗАКРЫТИЕ ПО КЛИКУ НА САЙДБАР */
+        if (target && target.classList.contains('sidebar-bg')) {
+            e.preventDefault();
+            html.classList.toggle('lock');
+            body.classList.toggle('lock');
+            modalBlock.classList.toggle('sidebar-bg');
+            allModal.forEach(item => {
+                if (item.classList.toggle('active')) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+    });
+
+    function openCloseModal(e, modal) {
+        e.preventDefault();
+        html.classList.toggle('lock');
+        body.classList.toggle('lock');
+        modalBlock.classList.toggle('sidebar-bg');
+        modal.classList.toggle('active');
+    }
+
+    /* СЛАЙДЕРЫ */
     let swiperTags = new Swiper('.swiper-container-tags', {
         slidesPerView: "auto",
         spaceBetween: 0,

@@ -1,0 +1,27 @@
+.about-block {
+
+  padding: 40px 0;
+  &__title{
+    padding-bottom: 50px;
+  }
+  &__text{
+    font-size: 14px;
+    line-height: 17px;
+
+  }
+  &__name{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding-top: 40px;
+  }
+  &__item{
+    width: 50%;
+    padding-left: 120px;
+  }
+  &__adv{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}

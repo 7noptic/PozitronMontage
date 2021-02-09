@@ -1,4 +1,4 @@
-.catalog {
+.catalog-block {
   padding: 60px 0 80px;
   &__title{
     padding-bottom: 40px;
@@ -11,8 +11,12 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    &-bottom{
+      display: flex;
+      align-items: flex-end;
+    }
     &:hover{
-      & > .catalog__name{
+      & > .catalog-block__name{
         color: #fff;
       }
       &::before{
