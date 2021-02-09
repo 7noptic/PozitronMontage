@@ -13,12 +13,14 @@
     }
   }
   &__next{
+    cursor: pointer;
     position: absolute;
-    right: 0px;
+    right: 15px;
     top: 44%;
     z-index: 10;
   }
   &__prev{
+    cursor: pointer;
     position: absolute;
     left: 15px;
     top: 44%;

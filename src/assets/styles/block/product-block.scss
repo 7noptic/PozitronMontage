@@ -2,4 +2,44 @@
   padding: 40px 0;
   &__title{
   }
+  &__left,&__right,{
+    width: 50%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &-min{
+      width: 50%;
+    }
+  }
+  &__left{
+    padding: 50px 45px 45px 60px;
+  }
+  &__right{
+
+    &-min{
+      padding: 35px 35px 40px;
+    }
+  }
+  &__top{
+    padding: 35px 0 32px 40px;
+  }
+  &__bottom{
+    padding: 37px 10px 3px 40px;
+  }
+  &__name, &__price{
+    color: #fff;
+    font-weight: 300;
+    font-size: 30px;
+    & > span{
+      color: #000;
+    }
+    &-big{
+color: #fff;
+font-weight: 300;
+    font-size: 60px;
+    }
+  }
+  &__price{
+    font-weight: 400;
+  }
 }

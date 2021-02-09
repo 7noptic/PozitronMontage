@@ -5,7 +5,7 @@
 @import "mixin";
 
 /* А */
-
+@import "block/articles-block";
 /* В */
 @import "block/bootstrap";
 @import "block/btn";
@@ -20,6 +20,7 @@
 
 /* F */
 @import "block/form";
+@import "block/form-subscribe";
 /* G */
 
 /* H */
@@ -37,11 +38,12 @@
 /* M */
 
 /* N */
-
+@import "block/line-nav";
 /* O */
 @import "block/object";
 /* P */
 @import "block/product-block";
+@import "block/partners";
 /* Q */
 
 /* R */

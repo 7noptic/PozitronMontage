@@ -1,0 +1,11 @@
+.form-subscribe{
+    padding: 65px 90px 100px;
+    background-color: $gray;
+    margin-left: 25px;
+    & > .help__line{
+        margin-bottom: 50px;
+    }
+    &__title{
+        padding-bottom: 40px;
+    }
+}
