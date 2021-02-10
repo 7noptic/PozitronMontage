@@ -1,5 +1,6 @@
 .card {
   &__item {
+    margin-bottom: 40px;
     display: block;
     position: relative;
     border: 1px solid $gray;
@@ -43,10 +44,11 @@
     margin-top: -5px;
   }
   &__name{
-    padding: 15px 0 5px;
+    display: block;
+    padding: 20px 0;
     font-weight: 500;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 20px;
     &:hover{
       color: $blue;
     }
@@ -81,5 +83,115 @@
     align-items: center;
     justify-content: center;
     width: 48%;
+  }
+  &__next{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 44%;
+    z-index: 10;
+  }
+  &__prev{
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 44%;
+    z-index: 10;
+    transform: rotate(180deg);
+  }
+  &__prev, &__next{
+    &.swiper-button-disabled{
+      display: none!important;
+    }
+  }
+
+
+}
+@media screen and (max-width: 1399px){
+  .card {
+
+    &__img {
+      padding: 35px;
+    }
+
+    &__plus {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      height: 76px;
+      padding: 23px 13px;
+      font-size: 22px;
+    }
+
+    &__descr {
+      background: $gray;
+      padding: 30px 20px;
+    }
+    &__name{
+      font-size: 15px;
+      line-height: 18px;
+    }
+    &__price{
+      display: inline-block;
+      font-size: 24px;
+      & > span{
+        padding-left: 14px;
+        font-size: 16px;
+      }
+    }
+    &__sale{
+      font-size: 24px;
+      line-height: 30px;
+    }
+    &__btn{
+      height: 40px;
+      width: 48%;
+    }
+
+  }
+}
+@media screen and (max-width: 399px){
+  .card {
+&__item{
+  margin-bottom: 20px;
+}
+    &__img {
+      padding: 25px;
+    }
+
+    &__plus {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      height: 76px;
+      padding: 23px 13px;
+      font-size: 22px;
+    }
+
+    &__descr {
+      background: $gray;
+      padding: 30px 15px;
+    }
+    &__name{
+      font-size: 13px;
+      line-height: 15px;
+    }
+    &__price{
+      display: inline-block;
+      font-size: 16px;
+      & > span{
+        padding-left: 10px;
+        font-size: 13px;
+      }
+    }
+    &__sale{
+      font-size: 16px;
+      line-height: 25px;
+    }
+    &__btn{
+      height: 40px;
+      width: 48%;
+    }
+
   }
 }

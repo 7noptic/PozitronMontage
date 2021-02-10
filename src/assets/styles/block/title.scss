@@ -3,3 +3,41 @@
   font-size: 40px;
   line-height: 49px;
 }
+@media screen and (max-width: 1399px){
+  .title{
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+@media screen and (max-width: 1199px){
+  .title{
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 991px){
+  .title{
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+@media screen and (max-width: 767px){
+  .title{
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+@media screen and (max-width: 575px){
+  .title{
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 379px){
+  .title{
+    text-align: center;
+    font-size: 22px;
+    line-height: 25px;
+  }
+}

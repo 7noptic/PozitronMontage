@@ -118,5 +118,35 @@ input[type="checkbox"]:checked + label:after,
 input[type="radio"]:checked + label:after {
   opacity: 1;
 }
+@media screen and (max-width: 991px){
+  .form-wrapper-header {
+    & > span {
+      width: 100%;
+      position: relative;
+      &::before{
+        content: url("../img/search.svg");
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 8px;
+      }
+      & > input {
+        width: 100%;
+        border-radius: 4px;
+        background: #F7F7F7;
+        padding: 12px 14px;
+        &::placeholder{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .form{
 
+    &__input{
+      height: 50px;
+      padding: 15px;
+    }
+  }
+}
 

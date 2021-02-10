@@ -1,5 +1,5 @@
 .banner {
-  padding: 60px 0 60px;
+  padding: 60px 0;
 
   &__adv {
     display: block;
@@ -7,12 +7,30 @@
     padding: 27px 0 27px 10px;
     font-size: 16px;
     opacity: 0.5;
+    line-height: 40px;
     border-top: 1px solid #000;
+    position: relative;
+    transition: $transition4;
+    &::before{
+      transition: all .8s;
+      content: url("../img/arrright.svg");
+      display: none;
+      position: absolute;
+      left: 0;
+      top: calc(50% - 18px);
+      opacity: 0;
+    }
     &:last-of-type{
       border-bottom: 1px solid #000;
     }
     &:hover{
       opacity: 1;
+      padding: 27px 0 27px 30px;
+      &::before{
+
+        display: inline-block;
+        opacity: .3;
+      }
     }
   }
   &__bg{
@@ -22,6 +40,9 @@
   }
   &__text{
     padding-left: calc(10% + 50px);
+  }
+  &__img{
+    padding: 60px;
   }
   &__title{
     font-weight: 300;
@@ -43,5 +64,191 @@
   }
   &__btn{
     padding: 12.5px 25.5px;
+  }
+}
+@media screen and (max-width: 1399px){
+  .banner {
+    padding: 50px 0;
+
+    &__adv {
+      font-size: 15px;
+      line-height: 30px;
+    }
+    &__title{
+      font-weight: 300;
+      font-size: 50px;
+      line-height: 63px;
+    }
+    &__price{
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 63px;
+    }
+  }
+}
+@media screen and (max-width: 1199px){
+  .banner {
+    padding: 40px 0;
+
+    &__adv {
+      padding: 25px 0 25px 10px;
+      font-size: 13px;
+      line-height: 20px;
+    }
+    &__text{
+      padding-left: calc(10% + 50px);
+    }
+    &__title{
+      font-weight: 300;
+      font-size: 40px;
+      line-height: 53px;
+    }
+    &__price{
+      font-weight: 600;
+      font-size: 40px;
+      line-height: 53px;
+      padding-bottom: 30px;
+    }
+    &__descr{
+      font-size: 13px;
+      padding-bottom: 30px;
+    }
+  }
+}
+@media screen and (max-width: 991px){
+  .banner {
+    padding: 30px 0;
+
+    &__adv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      padding: 20px 0;
+      line-height: 15px;
+      font-size: 12px;
+      opacity: 0.5;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 30px;
+
+    }
+    &__text{
+      padding-left: 0;
+    }
+    &__img{
+      padding: 40px;
+    }
+    &__title{
+      font-weight: 300;
+      font-size: 30px;
+      line-height: 43px;
+    }
+    &__price{
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 43px;
+      padding-bottom: 25px;
+    }
+    &__descr{
+      font-size: 12px;
+      padding-bottom: 25px;
+    }
+
+  }
+}
+@media screen and (max-width: 767px){
+  .banner {
+    padding: 25px 0;
+
+    &__adv {
+      width: 100%;
+      padding: 20px 0;
+      line-height: 14px;
+      font-size: 11px;
+      opacity: 0.5;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 30px;
+
+    }
+    &__text{
+      padding-left: 0;
+    }
+    &__img{
+      padding: 25px;
+    }
+    &__title{
+      font-weight: 300;
+      font-size: 25px;
+      line-height: 33px;
+      padding-bottom: 20px;
+    }
+    &__price{
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 33px;
+      padding-bottom: 20px;
+    }
+    &__descr{
+      font-size: 11px;
+      padding-bottom: 20px;
+    }
+    &__btn{
+      padding: 10px 24px;
+    }
+  }
+}
+@media screen and (max-width: 575px){
+  .banner {
+
+    &__adv {
+      width: 33.3333%;
+      padding: 20px 10px;
+      line-height: 14px;
+      font-size: 11px;
+      opacity: 0.5;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      margin-bottom: 0px;
+      &:nth-child(1),&:nth-child(2),&:nth-child(3){
+        border-bottom: none;
+      }
+    }
+    &__bg{
+      background-position: bottom right;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+
+    }
+    &__text{
+      background-color: rgba(0, 0, 0, .6);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 15px;
+    }
+    &__img{
+      padding: 25px;
+    }
+    &__title{
+      color: #fff;
+    }
+    &__price{
+      color: #fff;
+    }
+    &__descr{
+      color: #fff;
+    }
+    &__btn{
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
   }
 }

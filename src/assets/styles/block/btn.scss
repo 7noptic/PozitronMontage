@@ -22,3 +22,13 @@
     }
   }
 }
+@media screen and (max-width: 991px){
+  .btn{
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 767px){
+  .btn{
+    font-size: 11px;
+  }
+}

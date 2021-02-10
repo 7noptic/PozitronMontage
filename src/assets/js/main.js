@@ -89,13 +89,32 @@ window.addEventListener('DOMContentLoaded', () => {
     let swiperPartners = new Swiper('.swiper-container-partners', {
         slidesPerView: 6,
         spaceBetween: 30,
-        
-        allowSlidePrev: true,
-        allowSlideNext: true,
+        observer: true,
+        observeParents: true,
         navigation: {
             nextEl: '.partners__next',
             prevEl: '.partners__prev',
         },
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            575:{
+                slidesPerView: 2,
+            },
+            767:{
+                slidesPerView: 3,
+            },
+            991:{
+                slidesPerView: 4,
+            },
+            1199:{
+                slidesPerView: 5,
+            },
+            1399:{
+                slidesPerView: 6,
+            },
+        }
 
     });
     let swiperArticles = new Swiper('.swiper-container-articles', {
@@ -105,44 +124,146 @@ window.addEventListener('DOMContentLoaded', () => {
         observeParents: true,
         allowSlidePrev: true,
         allowSlideNext: true,
-        pagination:{
+        pagination: {
             el: '.swiper-pagination-bullets',
             type: 'bullets',
             clickable: true,
         }
 
     });
+    let swiperCard = new Swiper('.swiper-container-card', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        observer: true,
+        observeParents: true,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        navigation: {
+            nextEl: '.card__next',
+            prevEl: '.card__prev',
+        },
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            767:{
+                slidesPerView: 2,
+            },
+            1199:{
+                slidesPerView: 3,
+            },
+        }
+
+    });
+    let swiperObject = new Swiper('.swiper-container-object', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.object__next',
+            prevEl: '.object__prev',
+        },
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            767:{
+                slidesPerView: 2,
+            },
+            1199:{
+                slidesPerView: 3,
+            },
+        }
+
+    });
+    let swiperAwardsBlock = new Swiper('.swiper-container-awards-block', {
+        slidesPerView: 4,
+        spaceBetween: 100,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.awards-block__next',
+            prevEl: '.awards-block__prev',
+        },
+        breakpoints: {
+            0:{
+                slidesPerView: 1,
+            },
+            767:{
+                slidesPerView: 2,
+            },
+            1199:{
+                slidesPerView: 3,
+            },
+            1399:{
+                slidesPerView: 4,
+            },
+        }
+    });
+
+
     /* TABS */
     let articleLink = document.querySelectorAll('.js-article-link'),
         articleTabs = document.querySelectorAll('.js-article-tabs'),
-        articleParents = document.querySelector('.articles-block');
+        articleParents = document.querySelector('.articles-block'),
+        hitLink = document.querySelectorAll('.js-hit-link'),
+        hitTabs = document.querySelectorAll('.js-hit-tabs'),
+        hitParents = document.querySelector('.hit');
 
-    if(articleParents){
-        hideTabs(articleLink, articleTabs);
-        showTabs(0, articleLink, articleTabs);
-        articleParents.addEventListener('click', (e) => {
-            if(e.target && e.target.classList.contains('js-article-link')){
+    if (hitParents) {
+        showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link')
+    }
+    if (articleParents) {
+        showHideTabs(0, articleLink, articleTabs, articleParents, 'js-article-link')
+    }
+
+    function showHideTabs(i = 0, link, tabs, parent, classContains) {
+        hideTabs(link, tabs);
+        showTabs(0, link, tabs);
+        parent.addEventListener('click', (e) => {
+            if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
-                articleLink.forEach((item, i) => {
-                    if(item == e.target){
-                        hideTabs(articleLink, articleTabs);
-                        showTabs(i, articleLink, articleTabs);
+                link.forEach((item, i) => {
+                    if (item == e.target) {
+                        hideTabs(link, tabs);
+                        showTabs(i, link, tabs);
                     }
                 });
-            }        
+            }
         });
-
     }
-    function showTabs(i = 0,link, content){
+
+    function showTabs(i = 0, link, content) {
         link[i].classList.add('active');
         content[i].classList.add('active');
     }
-    function hideTabs(link, content){
-        link.forEach(item =>{
+
+    function hideTabs(link, content) {
+        link.forEach(item => {
             item.classList.remove('active');
         });
-        content.forEach(item =>{
+        content.forEach(item => {
             item.classList.remove('active');
         });
+    }
+
+    const footerMenuParent = document.querySelector('.footer'),
+        footerLink = document.querySelectorAll('.js-footer-title'),
+        footerList = document.querySelectorAll('.js-footer-menu');
+    if (footerMenuParent) {
+        footerMenuParent.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target && target.classList.contains('js-footer-title')) {
+                event.preventDefault();
+                footerLink.forEach((item, i) => {
+                    if (item == target) {
+                        target.classList.toggle('active');
+                        footerList[i].classList.toggle('active');
+                    }
+                });
+            }
+
+        }, {passive: false});
     }
 });

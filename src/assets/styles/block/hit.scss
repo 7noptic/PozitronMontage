@@ -3,3 +3,21 @@
   &__title{
   }
 }
+.js-hit-tabs{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+@media screen and (max-width: 1199px){
+  .hit{
+    padding: 60px 0 30px;
+
+  }
+}
+@media screen and (max-width: 767px){
+  .hit{
+    padding: 50px 0 25px;
+
+  }
+}
