@@ -266,4 +266,80 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }, {passive: false});
     }
+
+
+    
+
+    /* SHOW ALL BUTTON */
+
+    let getSiblings = function (e, byClass) {
+       
+        // for collecting siblings
+        let siblings = []; 
+        let siblingsByClass = []; 
+        // if no parent, return no sibling
+        if(!e.parentNode) {
+            return siblings;
+        }
+        // first child of the parent node
+        let sibling  = e.parentNode.firstChild;
+
+        // collecting siblings
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== e) {
+                if(sibling.classList.contains(byClass)) {
+                    siblingsByClass.push(sibling);
+                } 
+                siblings.push(sibling);
+            }
+            sibling = sibling.nextSibling;
+        }
+        return {
+            'siblings' : sibling,
+            'siblingsByClass' : siblingsByClass
+        }
+    };
+
+    let showAllBtn = document.querySelectorAll('.js-show-all')
+    showAllBtn.forEach( elem => {
+        elem.addEventListener('click', function(e) {
+            let arShowItems = getSiblings(this, 'mask').siblingsByClass
+    
+            if(this.classList.contains('open')) {
+                arShowItems.forEach( el => {
+                    el.classList.add('hidden')
+                })
+                this.innerHTML = "Показать все"
+                this.classList.remove('open')
+            } else {
+                arShowItems.forEach( el => {
+                    el.classList.remove('hidden')
+                })
+                this.innerHTML = "Скрыть последние"
+                this.classList.add('open')
+            }
+        })
+    })
+
+    
+    /* ASIDE ACCORDION */
+
+    let accordionBtn = document.querySelectorAll('.js-accordion-btn');
+
+    for (let i = 0; i < accordionBtn.length; i++) {
+        const element = accordionBtn[i];
+        element.addEventListener('click', function(e) {
+            console.log(this)
+            let accordionContent = this.nextElementSibling;
+            console.log(accordionContent)
+            if(this.classList.contains('active') ) {
+                accordionContent.classList.remove('open');
+                this.classList.remove('active');
+            } else {
+                accordionContent.classList.add('open');
+                this.classList.add('active');
+            }
+        })
+    }
+    
 });

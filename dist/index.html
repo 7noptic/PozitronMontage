@@ -118,7 +118,7 @@
     <section class="banner">
       <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-12 col-lg-2 d-flex d-lg-block justify-content-between flex-wrap flex-sm-nowrap">
             <a href="#" class="banner__adv">Бесплатная доставка</a>
             <a href="#" class="banner__adv">Товары со скидкой</a>
             <a href="#" class="banner__adv">Новый хит</a>
@@ -126,13 +126,13 @@
             <a href="#" class="banner__adv">Для оптовиков</a>
             <a href="#" class="banner__adv">Бесплатная доставка</a>
           </div>
-          <div class="col-10 banner__bg" style="background-image: url('img/bannerbg.jpg')">
+          <div class="col-12 mt-3 mt-sm-0 col-lg-10 banner__bg" style="background-image: url('img/bannerbg.jpg')">
             <div class="row">
-              <div class="col-6 d-flex align-items-center">
+              <div class="col-12 col-sm-6 d-flex align-items-center">
                 <div class="banner__text">
-                  <h2 class="banner__title">
+                  <h1 class="banner__title">
                     ОЗОНАТОР 3
-                  </h2>
+                  </h1>
                   <p class="banner__price">
                     12.900 ₽
                   </p>
@@ -147,7 +147,7 @@
                 </div>
 
               </div>
-              <div class="col-6">
+              <div class="col-12 col-sm-6">
                 <div class="banner__img d-flex align-items-center justify-content-center">
                   <img src="img/ozonator.png" alt="">
                 </div>
@@ -195,7 +195,7 @@
             </div>
           </a>
 
-          <a href="#" class="catalog-block__item catalog-block__item-bottom" style="background-image: url('img/catalog5.jpg')">
+          <a href="#" class="catalog-block__item catalog-block__item-bottom" style="background-image: url('img/catalog5.jpg');">
             <div class="catalog-block__name">
               Системы
               очистки воды
@@ -222,7 +222,7 @@
     </section>
     <section class="help">
       <div class="help__gray">
-        <div class="container d-flex justify-content-end">
+        <div class="container d-flex justify-content-center justify-content-md-end">
           <div class="row help__wrapper">
             <h2 class="title help__title">
               ПОМОЩЬ В ПОДБОРЕ
@@ -272,225 +272,606 @@
 
           <div class="col-12">
             <div class="tags d-flex flex-wrap">
-              <a href="#" class="tags__item">Озонаторы</a>
-              <a href="#" class="tags__item">Установки озонирования воды</a>
-              <a href="#" class="tags__item">Увлажнители воздуха</a>
-              <a href="#" class="tags__item">Осушители воздуха</a>
+              <a href="#" class="tags__item js-hit-link">Озонаторы</a>
+              <a href="#" class="tags__item js-hit-link">Установки озонирования воды</a>
+              <a href="#" class="tags__item js-hit-link">Увлажнители воздуха</a>
+              <a href="#" class="tags__item js-hit-link">Осушители воздуха</a>
             </div>
           </div>
+
 
           <div class="col-12">
-            <div class="row">
 
-              <div class="col-4">
-                <div class="card__item">
-                  <div class="card__plus">
-                    ХИТ
-                  </div>
-                  <a href="img/card.jpg" class="card__img glightbox">
-                    <img src="img/card.jpg" alt="card">
-                  </a>
-                  <div class="card__descr">
-                    <div class="d-flex align-items-center">
-                      <ul class="rating-star card__rating">
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li></li>
-                      </ul>
-                      <p class="card__availability">
-                        В наличии
-                      </p>
-                    </div>
+            <div class="js-hit-tabs">
+              <div class="row">
 
-                    <a href="card.html" class="card__name">
-                      Ozmetr-W озонометр воды
-                    </a>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="card__price">
-                        25 050 ₽
-                        <span>
-                          25 050 ₽
-                        </span>
+                <div class="swiper-container-card">
+                  <div class="swiper-wrapper">
 
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="ozonator" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
                       </div>
-                      <span class="card__sale">
-                        -10%
-                      </span>
                     </div>
 
-                    <div class="card__btns d-flex justify-content-between">
-                      <a href="#" class="btn card__btn js-card-basket">в корзину</a>
-                      <a href="#" class="btn btn-blue card__btn js-card-one-click">купить в 1 клик</a>
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="ozonator" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="ozonator" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
                   </div>
                 </div>
-              </div>
+                <div class="card__next">
+                  <img src="img/arrright.svg" alt="">
 
-              <div class="col-4">
-                <div class="card__item">
-                  <div class="card__plus">
-                    ХИТ
-                  </div>
-                  <a href="img/card.jpg" class="card__img glightbox">
-                    <img src="img/card.jpg" alt="card">
-                  </a>
-                  <div class="card__descr">
-                    <div class="d-flex align-items-center">
-                      <ul class="rating-star card__rating">
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li></li>
-                      </ul>
-                      <p class="card__availability">
-                        В наличии
-                      </p>
-                    </div>
-
-                    <a href="card.html" class="card__name">
-                      Ozmetr-W озонометр воды
-                    </a>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="card__price">
-                        25 050 ₽
-                        <span>
-                          25 050 ₽
-                        </span>
-
-                      </div>
-                      <span class="card__sale">
-                        -10%
-                      </span>
-                    </div>
-
-                    <div class="card__btns d-flex justify-content-between">
-                      <a href="#" class="btn card__btn js-card-basket">в корзину</a>
-                      <a href="#" class="btn btn-blue card__btn js-card-one-click">купить в 1 клик</a>
-                    </div>
-                  </div>
+                </div>
+                <div class="card__prev">
+                  <img src="img/arrright.svg" alt="">
                 </div>
               </div>
-
-              <div class="col-4">
-                <div class="card__item">
-                  <div class="card__plus">
-                    ХИТ
-                  </div>
-                  <a href="img/card.jpg" class="card__img glightbox">
-                    <img src="img/card.jpg" alt="card">
-                  </a>
-                  <div class="card__descr">
-                    <div class="d-flex align-items-center">
-                      <ul class="rating-star card__rating">
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li class="active"></li>
-                        <li></li>
-                      </ul>
-                      <p class="card__availability">
-                        В наличии
-                      </p>
-                    </div>
-
-                    <a href="card.html" class="card__name">
-                      Ozmetr-W озонометр воды
-                    </a>
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div class="card__price">
-                        25 050 ₽
-                        <span>
-                          25 050 ₽
-                        </span>
-
-                      </div>
-                      <span class="card__sale">
-                        -10%
-                      </span>
-                    </div>
-
-                    <div class="card__btns d-flex justify-content-between">
-                      <a href="#" class="btn card__btn js-card-basket">в корзину</a>
-                      <a href="#" class="btn btn-blue card__btn js-card-one-click">купить в 1 клик</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div>
 
+            <div class="js-hit-tabs">
+              <div class="row">
+                <div class="swiper-container-card">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="installation" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="installation" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card__next">
+                  <img src="img/arrright.svg" alt="">
+
+                </div>
+                <div class="card__prev">
+                  <img src="img/arrright.svg" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="js-hit-tabs">
+              <div class="row">
+                <div class="swiper-container-card">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="humidifier" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card__next">
+                  <img src="img/arrright.svg" alt="">
+
+                </div>
+                <div class="card__prev">
+                  <img src="img/arrright.svg" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="js-hit-tabs">
+              <div class="row">
+                <div class="swiper-container-card">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="dehumidifier" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="dehumidifier" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="card__item">
+                        <div class="card__plus">
+                          ХИТ
+                        </div>
+                        <a href="img/card.jpg" data-gallery="dehumidifier" class="card__img glightbox">
+                          <img src="img/card.jpg" alt="card">
+                        </a>
+                        <div class="card__descr">
+                          <div class="d-flex align-items-center">
+                            <ul class="rating-star card__rating">
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li class="active"></li>
+                              <li></li>
+                            </ul>
+                            <p class="card__availability">
+                              В наличии
+                            </p>
+                          </div>
+
+                          <a href="card.html" class="card__name">
+                            Ozmetr-W озонометр воды
+                          </a>
+                          <div class="d-flex align-items-center justify-content-between">
+                            <div class="card__price">
+                              25 050 ₽
+                              <span>
+                                25 050 ₽
+                              </span>
+
+                            </div>
+                            <span class="card__sale">
+                              -10%
+                            </span>
+                          </div>
+
+                          <div class="card__btns d-flex justify-content-between">
+                            <a href="#" class="btn card__btn js-card-basket">в корзину</a>
+                            <a href="#" class="btn btn-blue card__btn js-card-one-click">купить
+                              в 1
+                              клик</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card__next">
+                  <img src="img/arrright.svg" alt="">
+
+                </div>
+                <div class="card__prev">
+                  <img src="img/arrright.svg" alt="">
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
+
     </section>
     <section class="object">
       <div class="container">
         <div class="row">
+
           <div class="col-12">
             <h2 class="title object__title">
               Выполненые объекты
             </h2>
           </div>
+
           <div class="col-12">
             <div class="row">
+              <div class="swiper-container-object">
+                <div class="swiper-wrapper">
 
-              <div class="col-4">
-                <div class="object__item">
-                  <div class="object__img">
-                    <img src="img/obj.jpg" alt="">
+                  <div class="swiper-slide">
+                    <div class="object__item">
+                      <div class="object__img">
+                        <img src="img/obj.jpg" alt="">
+                      </div>
+                      <h3 class="object__name">
+                        Наименование объекта
+                      </h3>
+                      <p class="object__descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna aliqua.
+                      </p>
+                      <a href="#" class="btn object__btn">
+                        подробнее
+                      </a>
+                    </div>
                   </div>
-                  <h3 class="object__name">
-                    Наименование объекта
-                  </h3>
-                  <p class="object__descr">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
-                  </p>
-                  <a href="#" class="btn object__btn">
-                    подробнее
-                  </a>
+
+                  <div class="swiper-slide">
+                    <div class="object__item">
+                      <div class="object__img">
+                        <img src="img/obj.jpg" alt="">
+                      </div>
+                      <h3 class="object__name">
+                        Наименование объекта
+                      </h3>
+                      <p class="object__descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna aliqua.
+                      </p>
+                      <a href="#" class="btn object__btn">
+                        подробнее
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="swiper-slide">
+                    <div class="object__item">
+                      <div class="object__img">
+                        <img src="img/obj.jpg" alt="">
+                      </div>
+                      <h3 class="object__name">
+                        Наименование объекта
+                      </h3>
+                      <p class="object__descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna aliqua.
+                      </p>
+                      <a href="#" class="btn object__btn">
+                        подробнее
+                      </a>
+                    </div>
+                  </div>
+
                 </div>
               </div>
+              <div class="object__next">
+                <img src="img/arrright.svg" alt="">
 
-              <div class="col-4">
-                <div class="object__item">
-                  <div class="object__img">
-                    <img src="img/obj.jpg" alt="">
-                  </div>
-                  <h3 class="object__name">
-                    Наименование объекта
-                  </h3>
-                  <p class="object__descr">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
-                  </p>
-                  <a href="#" class="btn object__btn">
-                    подробнее
-                  </a>
-                </div>
               </div>
-
-              <div class="col-4">
-                <div class="object__item">
-                  <div class="object__img">
-                    <img src="img/obj.jpg" alt="">
-                  </div>
-                  <h3 class="object__name">
-                    Наименование объекта
-                  </h3>
-                  <p class="object__descr">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua.
-                  </p>
-                  <a href="#" class="btn object__btn">
-                    подробнее
-                  </a>
-                </div>
+              <div class="object__prev">
+                <img src="img/arrright.svg" alt="">
               </div>
-
             </div>
           </div>
         </div>
@@ -591,15 +972,18 @@
                   <img src="img/ozon1.png" alt="">
                 </div>
               </div>
-              <div class="product-block__right board">
+              <div class="board product-block__right">
                 <div class="product-block__left-min">
                   <div class="product-block__top" style="background-color: #A5A5A5;">
-                    <div class="product-block__name">
-                      ОЗОНАТОР 3
+                    <div>
+                      <div class="product-block__name">
+                        ОЗОНАТОР 3
+                      </div>
+                      <div class="product-block__price">
+                        12 900 ₽
+                      </div>
                     </div>
-                    <div class="product-block__price">
-                      12 900 ₽
-                    </div>
+
                     <div class="product-block__img justify-content-end">
                       <img src="img/ozon2.png" alt="">
                     </div>
@@ -738,21 +1122,23 @@
     <section class="articles-block">
       <div class="container">
         <div class="row">
-          <div class="col-7">
+          <div class="col-12">
             <h2 class="title articles-block__title">
               Статьи и новости
             </h2>
+          </div>
+          <div class="col-12 col-lg-7">
             <nav class="line-nav">
               <a href="#" class="line-nav__link js-article-link">Статьи</a>
               <a href="#" class="line-nav__link js-article-link">Новости</a>
               <a href="#" class="line-nav__link js-article-link">YouTube</a>
             </nav>
           </div>
-          <div class="col-5"></div>
+          <div class="d-none d-lg-block col-5"></div>
 
         </div>
         <div class="row d-flex">
-          <div class="col-7 d-flex">
+          <div class="col-12 col-lg-7 d-flex">
             <div class="articles-block-content js-article-tabs">
               <div class="swiper-container-articles">
                 <div class="swiper-wrapper">
@@ -1087,7 +1473,7 @@
             </div>
 
           </div>
-          <div class="col-5 d-flex">
+          <div class="col-12 col-lg-5 d-flex">
             <div class="form-subscribe">
               <h2 class="title form-subscribe__title">
                 Подпишись
@@ -1123,7 +1509,7 @@
               О компании
             </h2>
           </div>
-          <div class="col-7 d-flex">
+          <div class="col-12 col-md-7 d-flex">
             <div class="about-block__text">
               Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Praesent elementum
               facilisis leo vel fringilla est ullamcorper. Consequat mauris nunc congue nisi vitae suscipit
@@ -1165,7 +1551,7 @@
               sagittis. Aliquet nibh praesent tristique magna sit amet purus gravida.
             </div>
           </div>
-          <div class="col-5 d-flex">
+          <div class="col-12 col-md-5 d-flex">
             <div class="about-block__adv">
               <div class="about-block__item">
                 <div class="about-block__img">
@@ -1213,29 +1599,43 @@
     <section class="awards-block">
       <div class="container">
         <div class="row">
-          <div class="col-3">
-            <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
-              <img src="img/awardsblock.jpg" alt="">
-            </a>
+          <div class="swiper-container-awards-block">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
+                  <img src="img/awardsblock.jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
+                  <img src="img/awardsblock.jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
+                  <img src="img/awardsblock.jpg" alt="">
+                </a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
+                  <img src="img/awardsblock.jpg" alt="">
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <div class="awards-block__next">
+            <img src="img/arrright.svg" alt="">
+
+          </div>
+          <div class="awards-block__prev">
+            <img src="img/arrright.svg" alt="">
           </div>
 
-          <div class="col-3">
-            <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
-              <img src="img/awardsblock.jpg" alt="">
-            </a>
-          </div>
-
-          <div class="col-3">
-            <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
-              <img src="img/awardsblock.jpg" alt="">
-            </a>
-          </div>
-
-          <div class="col-3">
-            <a href="img/awardsblock.jpg" data-gallery="awards" class="glightbox awards-block__img">
-              <img src="img/awardsblock.jpg" alt="">
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -1245,7 +1645,7 @@
     <div class="footer__line">
       <div class="container">
         <div class="row">
-          <div class="col-12 d-flex align-items-center justify-content-center">
+          <div class="col-12 justify-content-between flex-wrap flex-lg-nowrap d-flex align-items-center justify-content-lg-center">
             <div class="footer-form__img">
               <img src="img/mail.svg" alt="">
             </div>
@@ -1265,7 +1665,7 @@
     <div class="footer__line-two">
       <div class="container">
         <div class="row">
-          <div class="col-3 d-flex flex-column justify-content-between">
+          <div class="col-12 col-xl-3 d-flex justify-content-center align-items-center align-items-xl-start flex-xl-column justify-content-md-between">
             <div class="footer__logo">
               <img src="img/logof.svg" alt="">
             </div>
@@ -1279,11 +1679,12 @@
               интернет-магазин ТриОзон.
             </p>
           </div>
-          <div class="col-7">
+          <div class="col-12 col-xl-9">
             <div class="row">
-              <div class="col-4">
-                <nav id="footer-menu-1">
-                  <h3>О компании</h3>
+              <div class="col-12 col-sm-6 col-md-3">
+                <h3 class="js-footer-title footer__title">О компании</h3>
+
+                <nav class="js-footer-menu footer__menu">
                   <a href="#">ТриОзон</a>
                   <a href="#">Контакты</a>
                   <a href="#">Новости</a>
@@ -1293,9 +1694,10 @@
                   <a href="#">Сертификаты</a>
                 </nav>
               </div>
-              <div class="col-4">
-                <nav id="footer-menu-2">
-                  <h3>Покупателю</h3>
+              <div class="col-12 col-sm-6 col-md-3">
+                <h3 class="js-footer-title footer__title">Покупателю</h3>
+                <nav class="js-footer-menu footer__menu">
+
                   <a href="#">Оплата и доставка</a>
                   <a href="#">Сервис и поддержка</a>
                   <a href="#">Часто задаваемые вопросы</a>
@@ -1305,9 +1707,10 @@
                   <a href="#">Кредит и лизинг</a>
                 </nav>
               </div>
-              <div class="col-4">
-                <nav id="footer-menu-3">
-                  <h3>Категории</h3>
+              <div class="col-12 col-sm-6 col-md-3">
+                <h3 class="js-footer-title footer__title">Категории</h3>
+                <nav class="js-footer-menu footer__menu">
+
                   <a href="#">Генераторы озона</a>
                   <a href="#">Установки озонирования воды</a>
                   <a href="#">Установки озонирования воздуха</a>
@@ -1316,42 +1719,43 @@
                   <a href="#">Осушители воздуха</a>
                 </nav>
               </div>
+              <div class="col-12 col-sm-6 col-md-3 d-flex flex-column align-items-center d-sm-block">
+                <h3 class="footer__title">
+                  Контакты
+                </h3>
+                <a href="tel:88000000000" class="footer__link">8 800 000 00 00</a>
+                <a href="#" class="btn footer__btn js-call">ЗАКАЗАТЬ ЗВОНОК</a>
+                <a href="mailto:info@ontu.ru" class="footer__link">info@ontu.ru</a>
+                <h4 class="footer__subtitle">
+                  Наш адрес:
+                </h4>
+                <p class="footer__text">
+                  Москва, Волоколамское ш. 112, к.1с3а
+                </p>
+              </div>
             </div>
           </div>
-          <div class="col-2">
-            <h3 class="footer__title">
-              Контакты
-            </h3>
-            <a href="tel:88000000000" class="footer__link">8 800 000 00 00</a>
-            <a href="#" class="btn footer__btn js-call">ЗАКАЗАТЬ ЗВОНОК</a>
-            <a href="mailto:info@ontu.ru" class="footer__link">info@ontu.ru</a>
-            <h4 class="footer__subtitle">
-              Наш адрес:
-            </h4>
-            <p class="footer__text">
-              Москва, Волоколамское ш. 112, к.1с3а
-            </p>
-          </div>
+
         </div>
       </div>
     </div>
 
     <div class="footer__line-three">
       <div class="container">
-        <div class="row">
-          <div class="col-3">
+        <div class="row d-flex align-items-center">
+          <div class="col-12 col-lg-3 d-flex align-items-center justify-content-center d-lg-block">
             <div class="footer__text">
               2021 ТриОзон
             </div>
           </div>
-          <div class="col-7">
+          <div class="col-12 col-lg-7 d-flex align-items-center justify-content-center d-lg-block">
             <nav id="footer-menu-copy">
               <a href="#">Карта сайта</a>
               <a href="#">Политика конфиденциальности</a>
               <a href="#">Подписка</a>
             </nav>
           </div>
-          <div class="col-2">
+          <div class="col-12 col-lg-2 d-flex align-items-center justify-content-center d-lg-block">
             <div class="footer__oparin">
               <a href="#">
                 <img src="img/oparin.svg" alt="">
