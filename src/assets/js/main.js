@@ -155,6 +155,60 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
+    // let swiperCardGallery = new Swiper('.swiper-container-card-gallery', {
+    //     direction: 'horizontal',
+    //     loop: true,
+    //     loopAdditionalSlides: 0,
+    //     initialSlide: 5,
+    //     speed: 700,
+    //     simulateTouch: false,
+    //     spaceBetween: 20,
+    //     // navigation: {
+    //     //     nextEl: '.card__next',
+    //     //     prevEl: '.card__prev',
+    //     // },
+    //     // breakpoints: {
+    //     //     0:{
+    //     //         slidesPerView: 1,
+    //     //     },
+    //     //     767:{
+    //     //         slidesPerView: 2,
+    //     //     },
+    //     //     1199:{
+    //     //         slidesPerView: 3,
+    //     //     },
+    //     // }
+
+    // });
+    
+    // const slidesPerView = 3;
+    // let swiperCardMini = new Swiper('.swiper-container-card-mini', {
+    //     direction: 'vertical',
+    //     loop: true,
+    //     loopAdditionalSlides: 0,
+    //     slidesPerView: 5,
+    //     initialSlide: 3,
+    //     centeredSlides: true,
+    //     slideToClickedSlide: true,
+    //     speed: 500,
+    //     spaceBetween: 20,
+    //     // navigation: {
+    //     //     nextEl: '.card__next',
+    //     //     prevEl: '.card__prev',
+    //     // },
+    //     // breakpoints: {
+    //     //     0:{
+    //     //         slidesPerView: 1,
+    //     //     },
+    //     //     767:{
+    //     //         slidesPerView: 2,
+    //     //     },
+    //     //     1199:{
+    //     //         slidesPerView: 3,
+    //     //     },
+    //     // }
+
+    // });
     let swiperObject = new Swiper('.swiper-container-object', {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -329,9 +383,7 @@ window.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < accordionBtn.length; i++) {
         const element = accordionBtn[i];
         element.addEventListener('click', function(e) {
-            console.log(this)
             let accordionContent = this.nextElementSibling;
-            console.log(accordionContent)
             if(this.classList.contains('active') ) {
                 accordionContent.classList.remove('open');
                 this.classList.remove('active');
@@ -341,5 +393,20 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
+
+    function handleChange(input, min, max) {
+        input.value = input.value.replace(/[^0-9]/g, '');
+        if (+input.value < min) input.value = min;
+        if (+input.value > max) input.value = max;
+    }
+
+    let inputNumber = document.querySelectorAll('.js-input-wrap input')
+    inputNumber.forEach(el => {
+        el.addEventListener('keyup', function() {
+            let minValue = el.getAttribute('data-min')
+            let maxValue = el.getAttribute('data-max')
+            handleChange(el, minValue, maxValue)
+        })
+    })
     
 });

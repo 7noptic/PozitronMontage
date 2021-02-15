@@ -80,13 +80,15 @@
           margin-right: 20px;
           position: relative;
           &:after {
-            content: "v";
+            content: "";
             position: absolute;
+            background: linear-gradient(135deg, #005DA0 0%, #001F8B 100%);
+            border-radius: 2px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 15px;
-            height: 15px;
+            width: 10px;
+            height: 10px;
             font-size: 18px;
             opacity: 0;
             visibility: hidden;
@@ -240,6 +242,5 @@
 @media screen and (max-width: 767px){
   .hit{
     padding: 50px 0 25px;
-
   }
 }

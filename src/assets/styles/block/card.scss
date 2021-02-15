@@ -3,12 +3,12 @@
     margin-bottom: 40px;
     display: block;
     position: relative;
-    border: 1px solid $gray;
-    outline: 2px solid transparent;
+    border: 5px solid $gray;
+    // outline: 2px solid transparent;
 
     &:hover {
-      outline: 2px solid $blue;
-      border: 1px solid $blue;
+      // outline: 2px solid $blue;
+      border: 5px solid $blue;
     }
 
   }
@@ -105,8 +105,55 @@
     }
   }
 
+  &-block {
+    .title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+    &__left {
+      display: flex;
+    }
+  }
 
+  &-gallery {
+    &__mini {
+      overflow: hidden;      
+      .swiper-wrapper {
+      
+      }
+      .card__img {
+        padding: 0;
+      }
+    }
+    &__img {
+      overflow: hidden;
+      .card__img {
+        padding: 0;
+      }
+    }
+  }
 }
+
+.recommend, .views{  
+  padding: 80px 0 40px 0;
+
+  .title {
+    margin-bottom: 40px;
+  }
+  
+  .swiper-container-card {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+.views {
+  padding-bottom: 0;
+}
+
+
+
 @media screen and (max-width: 1399px){
   .card {
 
