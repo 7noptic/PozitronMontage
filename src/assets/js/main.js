@@ -1,7 +1,9 @@
 'use script';
-import Swiper, {Navigation, Pagination} from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
+import $ from 'jquery';
+import { startCase } from 'lodash';
 
 Swiper.use([Navigation, Pagination]);
 window.addEventListener('DOMContentLoaded', () => {
@@ -96,22 +98,22 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.partners__prev',
         },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            575:{
+            575: {
                 slidesPerView: 2,
             },
-            767:{
+            767: {
                 slidesPerView: 3,
             },
-            991:{
+            991: {
                 slidesPerView: 4,
             },
-            1199:{
+            1199: {
                 slidesPerView: 5,
             },
-            1399:{
+            1399: {
                 slidesPerView: 6,
             },
         }
@@ -143,18 +145,19 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.card__prev',
         },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            767:{
+            767: {
                 slidesPerView: 2,
             },
-            1199:{
+            1199: {
                 slidesPerView: 3,
             },
         }
 
     });
+
     let swiperObject = new Swiper('.swiper-container-object', {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -165,13 +168,13 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.object__prev',
         },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            767:{
+            767: {
                 slidesPerView: 2,
             },
-            1199:{
+            1199: {
                 slidesPerView: 3,
             },
         }
@@ -187,20 +190,153 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.awards-block__prev',
         },
         breakpoints: {
-            0:{
+            0: {
                 slidesPerView: 1,
             },
-            767:{
+            767: {
                 slidesPerView: 2,
             },
-            1199:{
+            1199: {
                 slidesPerView: 3,
             },
-            1399:{
+            1399: {
                 slidesPerView: 4,
             },
         }
     });
+
+
+    const $gallery = $('.swiper-container-card-gallery');
+    const $thumbs = $('.swiper-container-card-mini');
+    const slideNumber = $gallery.find('.swiper-slide').length / 3;
+    const slidesPerView = 3;
+    let targetIndex;
+
+    const activeSlideClass = 'active';
+    let $thumbsActiveSlide;
+    let $galleryActiveSlide;
+
+
+    let swiperGallery = new Swiper('.swiper-container-card-gallery', {
+        direction: 'vertical',
+        loop: true,
+        loopAdditionalSlides: 0,
+        initialSlide: slideNumber,
+        speed: 700,
+        simulateTouch: false,
+        spaceBetween: 20,
+    });
+
+    let swiperThumbs = new Swiper('.swiper-container-card-mini', {
+        direction: 'vertical',
+        loop: true,
+        loopAdditionalSlides: 0,
+        slidesPerView: slidesPerView,
+        initialSlide: slideNumber,
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        speed: 500,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.card-gallery__mini-ar-b',
+            prevEl: '.card-gallery__mini-ar-t',
+        },
+    });
+
+    //add custom active class for smooth animation
+    $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
+    $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
+    $thumbsActiveSlide.addClass(activeSlideClass);
+    $galleryActiveSlide.addClass(activeSlideClass);
+    //---------------------------------------------
+
+
+    swiperThumbs.on("slideChangeTransitionStart", function () {
+        //add custom active class for smooth animation
+        $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
+        $thumbsActiveSlide.siblings().removeClass(activeSlideClass);
+        //---------------------------------------------
+
+        targetIndex = Number(swiperThumbs.realIndex);
+        swiperThumbs.detachEvents();
+        swiperGallery.slideTo(targetIndex + 1, 700, true);
+    });
+
+    // swiperThumbs.on("slideChangeTransitionEnd", function () {
+    //   swiperThumbs.attachEvents();
+    // });
+
+    swiperGallery.on("slideChangeTransitionStart", function () {
+        //add custom active class for smooth animation
+        $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
+        $galleryActiveSlide.siblings().removeClass(activeSlideClass);
+        //---------------------------------------------
+    });
+
+    swiperGallery.on("slideChangeTransitionEnd", function () {
+        if (targetIndex < slideNumber) {
+            targetIndex += slideNumber;
+            teleportTo(targetIndex);
+        } else if (targetIndex >= slideNumber * 2) {
+            targetIndex -= slideNumber;
+            teleportTo(targetIndex);
+        } else {
+            //add custom active class for smooth animation
+            $thumbsActiveSlide.addClass(activeSlideClass);
+            $galleryActiveSlide.addClass(activeSlideClass);
+            //---------------------------------------------
+        }
+        swiperThumbs.attachEvents();
+    });
+
+    function teleportTo(slideIndex) {
+        swiperThumbs.slideTo(slideIndex + slidesPerView, 0, false);
+        swiperGallery.slideTo(slideIndex + 1, 0, false);
+
+        //add custom active class for smooth animation
+        $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
+        $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
+        $thumbsActiveSlide.addClass(activeSlideClass);
+        $galleryActiveSlide.addClass(activeSlideClass);
+        //---------------------------------------------
+    }
+
+    //If u have images with lazy add this after swipers init
+    function fixLazy() {
+        let gallerylastIndex = slideNumber * 2;
+        let thumbslastIndex = slideNumber * 2 + slidesPerView - 1;
+        let $lastGallerySlide = $(swiperGallery.slides[gallerylastIndex]).find('.swiper-lazy');
+        let $lastThumbsSlide = $(swiperThumbs.slides[thumbslastIndex]).find('.swiper-lazy');
+
+        removeLazySlide($lastGallerySlide);
+        removeLazySlide($lastThumbsSlide);
+
+        let counter;
+
+        if ((slidesPerView - 1) % 2 !== 0) {
+            counter = Math.floor((slidesPerView - 1) / 2) + 1;
+        } else {
+            counter = (slidesPerView - 1) / 2;
+        }
+
+        for (let i = 0; i < counter; i++) {
+
+            let $prevSlide = $(swiperThumbs.slides[thumbslastIndex - (i + 1)]).find('.swiper-lazy');
+            let $nextSlide = $(swiperThumbs.slides[thumbslastIndex + (i + 1)]).find('.swiper-lazy');
+
+            removeLazySlide($prevSlide);
+            removeLazySlide($nextSlide);
+        }
+    }
+
+    function removeLazySlide($slide) {
+        let data = $slide.data('background');
+        $slide.attr('style', `background-image: url('${data}')`);
+        $slide.removeAttr('data-background');
+        $slide.addClass('swiper-lazy-loaded');
+        $slide.empty();
+    }
+
 
 
     /* TABS */
@@ -264,6 +400,159 @@ window.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-        }, {passive: false});
+        }, { passive: false });
     }
+
+
+    /* SHOW ALL BUTTON */
+
+    let getSiblings = function (e, byClass) {
+
+        // for collecting siblings
+        let siblings = [];
+        let siblingsByClass = [];
+        // if no parent, return no sibling
+        if (!e.parentNode) {
+            return siblings;
+        }
+        // first child of the parent node
+        let sibling = e.parentNode.firstChild;
+
+        // collecting siblings
+        while (sibling) {
+            if (sibling.nodeType === 1 && sibling !== e) {
+                if (sibling.classList.contains(byClass)) {
+                    siblingsByClass.push(sibling);
+                }
+                siblings.push(sibling);
+            }
+            sibling = sibling.nextSibling;
+        }
+        return {
+            'siblings': sibling,
+            'siblingsByClass': siblingsByClass
+        }
+    };
+
+    let showAllBtn = document.querySelectorAll('.js-show-all')
+    showAllBtn.forEach(elem => {
+        elem.addEventListener('click', function (e) {
+            let arShowItems = getSiblings(this, 'mask').siblingsByClass
+
+            if (this.classList.contains('open')) {
+                arShowItems.forEach(el => {
+                    el.classList.add('hidden')
+                })
+                this.innerHTML = "Показать все"
+                this.classList.remove('open')
+            } else {
+                arShowItems.forEach(el => {
+                    el.classList.remove('hidden')
+                })
+                this.innerHTML = "Скрыть последние"
+                this.classList.add('open')
+            }
+        })
+    })
+
+
+    /* ASIDE ACCORDION */
+
+    let accordionBtn = document.querySelectorAll('.js-accordion-btn');
+
+    for (let i = 0; i < accordionBtn.length; i++) {
+        const element = accordionBtn[i];
+        element.addEventListener('click', function (e) {
+            let accordionContent = this.nextElementSibling;
+            if (this.classList.contains('active')) {
+                accordionContent.classList.remove('open');
+                this.classList.remove('active');
+            } else {
+                accordionContent.classList.add('open');
+                this.classList.add('active');
+            }
+        })
+    }
+
+    function handleChange(input, min, max) {
+        input.value = input.value.replace(/[^0-9]/g, '');
+        if (+input.value < min) input.value = min;
+        if (+input.value > max) input.value = max;
+    }
+
+    let inputNumber = document.querySelectorAll('.js-input-wrap input')
+    inputNumber.forEach(el => {
+        el.addEventListener('keyup', function () {
+            let minValue = el.getAttribute('data-min')
+            let maxValue = el.getAttribute('data-max')
+            handleChange(el, minValue, maxValue)
+        })
+    })
+
+
+    /* Reviews Stars */
+
+    let starsContainer = document.querySelector('.card__rate');
+    let str = '';
+
+    function activeStarts(el, index, flag) {
+        str = '';
+        if (!flag) {
+            stars.forEach((elem, i) => {
+                elem.classList.remove('active')
+            })
+        } else if (flag == undefined) {
+            stars.forEach((elem, i) => {
+                if (i <= index) {
+                    elem.classList.add('active')
+                } else {
+                    elem.classList.remove('active')
+                }
+            })
+        }
+        else {
+            stars.forEach((elem, i) => {
+                if (i <= index) {
+                    elem.classList.add('active')
+                } else {
+                    elem.classList.remove('active')
+                }
+                str += elem.outerHTML ;
+            })
+            starsContainer.innerHTML = str;
+            handleEvenets()
+        }
+    }
+
+
+    function handleEvenets(){
+        let stars = document.querySelectorAll('.card__rate span');
+        let starsFlag = true;
+
+        stars.forEach((el, index) => {
+            el.addEventListener('mouseover', function () {
+                starsFlag = false;
+                stars.forEach((elem, i) => {
+                    if (i <= index) {
+                        elem.classList.add('active')
+                    } else {
+                        elem.classList.remove('active')
+                    }
+                })
+            })
+    
+            el.addEventListener('mouseout', function StarsHandleMouseOut(el) {
+                starsFlag = false;
+                activeStarts(el, index, starsFlag)
+            })
+    
+            el.addEventListener('click', function StarsHandleClick() {
+                starsFlag = true;
+                activeStarts(el, index, starsFlag)
+            })
+    
+        })
+    }
+    handleEvenets()
+    
 });
