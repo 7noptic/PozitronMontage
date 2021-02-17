@@ -30,6 +30,7 @@
     font-size: 24px;
     color: #fff;
     font-weight: 800;
+    z-index: 100;
   }
 
   &__descr {
@@ -201,7 +202,7 @@
       &__mini {
         overflow: hidden;   
         margin: 20px 0;
-        height: calc(100% - (24px+36px)*2 );
+        height: calc(100% - (24px + 36px) * 2);
         &-wrap {
           display: flex;
           flex-direction: column;
@@ -240,7 +241,7 @@
             height: 160px ;
           }
           &-slide {
-            width: 160px;
+            width: auto;
             height: 148px;
             display: flex;
             align-items: center;
@@ -250,7 +251,6 @@
             transition: 0.3s;
             cursor: pointer;
             img {
-              max-width: 128px;
               height: auto;
             }
             &.active {
@@ -517,6 +517,72 @@
       width: 48%;
     }
 
+  }
+}
+@media screen and (max-width: 575px){
+  .card-block {
+    
+    .card {
+      &__tab{
+        & p{
+          font-size: 12px;
+          margin-bottom: 15px;
+        }
+      }
+      &__delivery {
+        table{
+          font-size: 12px;
+        }
+      }
+      &__text{
+        font-size: 12px;
+      }
+      &__price{
+        font-size: 18px;
+        &-old{
+          font-size: 16px;
+        }
+        &-discount{
+          font-size: 18px;
+        }
+      }
+      &-gallery {
+       &__mini{
+height: 100%;
+       &-wrap{
+         height: 420px;
+       }
+          .swiper {
+            &-wrapper{
+              height: 160px ;
+            }
+            &-slide {
+              width: auto;
+              height: 148px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-right: 0;
+              border: none;
+              transition: 0.3s;
+              cursor: pointer;
+              img {
+                height: auto;
+              }
+              &.active {
+                border-color: #000;
+              }
+            }
+            &-container-card-mini {
+              height: 100%;
+            }
+          }
+          .card__img {
+            padding: 0;
+          }
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 399px){

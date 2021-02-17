@@ -73,6 +73,9 @@
     &__adv {
       font-size: 15px;
       line-height: 30px;
+      &::before{
+        top: calc(50% - 13px);
+      }
     }
     &__title{
       font-weight: 300;
@@ -94,6 +97,9 @@
       padding: 25px 0 25px 10px;
       font-size: 13px;
       line-height: 20px;
+      &::before{
+        top: calc(50% - 13px);
+      }
     }
     &__text{
       padding-left: calc(10% + 50px);

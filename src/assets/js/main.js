@@ -3,7 +3,7 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 import Readmore from "readmore-js";
 import GLightbox from 'glightbox';
 import $ from 'jquery';
-import { startCase } from 'lodash';
+import { head, startCase } from 'lodash';
 
 Swiper.use([Navigation, Pagination]);
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,7 +11,16 @@ window.addEventListener('DOMContentLoaded', () => {
     let headerMenu = document.querySelector('.header__nav'),
         html = document.querySelector('html'),
         body = document.querySelector('body');
+/* FORM SEARCH OPEN */
+let header = document.querySelector('.header'),
+    searchForm = header.querySelector('.header__search > form');
 
+    header.addEventListener('click', (e) => {
+        let target = e.target;
+        if(target && target.classList.contains('js-search')){
+            searchForm.classList.toggle('active');
+        }
+    });
     /* MODAL */
     let modalBlock = document.querySelector('.js-sidebars'),
         allModal = document.querySelectorAll('.js-sidebars > section'),
@@ -70,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function openCloseModal(e, modal) {
         e.preventDefault();
-        html.classList.toggle('lock');
+        //html.classList.toggle('lock');
         body.classList.toggle('lock');
         modalBlock.classList.toggle('sidebar-bg');
         modal.classList.toggle('active');
@@ -136,6 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let swiperCard = new Swiper('.swiper-container-card', {
         slidesPerView: 3,
         spaceBetween: 30,
+
         observer: true,
         observeParents: true,
         allowSlidePrev: true,
@@ -166,6 +176,50 @@ window.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '.object__next',
             prevEl: '.object__prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            767: {
+                slidesPerView: 2,
+            },
+            1199: {
+                slidesPerView: 3,
+            },
+        }
+
+    });
+    let swiperRecommend = new Swiper('.swiper-container-recommend', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.recommend__next',
+            prevEl: '.recommend__prev',
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            767: {
+                slidesPerView: 2,
+            },
+            1199: {
+                slidesPerView: 3,
+            },
+        }
+
+    });
+    let swiperViews = new Swiper('.swiper-container-views', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        observer: true,
+        observeParents: true,
+        navigation: {
+            nextEl: '.views__next',
+            prevEl: '.views__prev',
         },
         breakpoints: {
             0: {
@@ -219,18 +273,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let swiperGallery = new Swiper('.swiper-container-card-gallery', {
         direction: 'vertical',
-        loop: true,
-        loopAdditionalSlides: 0,
+        //loop: true,
+        //loopAdditionalSlides: 0,
         initialSlide: slideNumber,
         speed: 700,
         simulateTouch: false,
         spaceBetween: 20,
+        
     });
 
     let swiperThumbs = new Swiper('.swiper-container-card-mini', {
         direction: 'vertical',
-        loop: true,
-        loopAdditionalSlides: 0,
+        //loop: true,
+        //loopAdditionalSlides: 0,
         slidesPerView: slidesPerView,
         initialSlide: slideNumber,
         centeredSlides: true,
@@ -241,6 +296,18 @@ window.addEventListener('DOMContentLoaded', () => {
             nextEl: '.card-gallery__mini-ar-b',
             prevEl: '.card-gallery__mini-ar-t',
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            575: {
+                slidesPerView: 3,
+            },
+            1199: {
+                slidesPerView: 3,
+            },
+            
+        }
     });
 
     //add custom active class for smooth animation

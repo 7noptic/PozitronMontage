@@ -1,0 +1,22 @@
+.views{
+    &__next{
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 44%;
+        z-index: 10;
+      }
+      &__prev{
+        cursor: pointer;
+        position: absolute;
+        left: 15px;
+        top: 44%;
+        z-index: 10;
+        transform: rotate(180deg);
+      }
+      &__prev, &__next{
+        &.swiper-button-disabled{
+          display: none!important;
+        }
+      }
+}
