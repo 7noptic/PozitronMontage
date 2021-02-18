@@ -11,7 +11,7 @@
     border-top: 1px solid #000;
     position: relative;
     transition: $transition4;
-    &::before{
+    /*&::before{
       transition: all .8s;
       content: url("../img/arrright.svg");
       display: none;
@@ -19,18 +19,18 @@
       left: 0;
       top: calc(50% - 18px);
       opacity: 0;
-    }
+    }*/
     &:last-of-type{
       border-bottom: 1px solid #000;
     }
     &:hover{
       opacity: 1;
-      padding: 27px 0 27px 30px;
+      /*padding: 27px 0 27px 30px;
       &::before{
 
         display: inline-block;
         opacity: .3;
-      }
+      }*/
     }
   }
   &__bg{
@@ -210,7 +210,7 @@
   .banner {
 
     &__adv {
-      width: 33.3333%;
+      width: 33.3333333333333333%;
       padding: 20px 10px;
       line-height: 14px;
       font-size: 11px;

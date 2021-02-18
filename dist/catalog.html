@@ -18,34 +18,72 @@
   <header class="header">
     <div class="container">
       <div class="row header__row d-flex align-items-center">
-        <div class="col-2 js-region"><a href="#" class="header__city d-flex align-items-center js-region"><img src="img/map.svg" alt="map" class="js-region"> <span class="js-region js-region-city">Москва</span></a></div>
-        <div class="col-8">
-          <nav id="header-menu-one"><a href="#">Оплата и доставка</a> <a href="#">Сервис и поддержка</a> <a href="#">Кредит и лизинг</a> <a href="#">FAQ</a> <a href="#">Контакты</a></nav>
+        <div class="col-3 col-sm-4 col-lg-2">
+          <div class="header__burger js-burger"><span class="js-burger"></span></div>
+          <div class="header__burger-fixed"></div><a href="#" class="header__city d-none d-lg-flex align-items-center js-region"><img src="img/map.svg" alt="map" class="js-region"> <span class="js-region js-region-city">Москва</span></a>
         </div>
-        <div class="col-2"><a href="" class="header__login d-flex align-items-center justify-content-end"><img src="img/user.svg" alt="user"> <span>ВОЙТИ</span></a></div>
+        <div class="col-6 col-sm-4 col-lg-8 js-adaptive-logo d-flex justify-content-center d-lg-block">
+          <div class="hamburger-menu">
+            <nav id="header-menu-one"><a href="#">Оплата и доставка</a> <a href="#">Сервис и поддержка</a> <a href="#">Кредит и лизинг</a> <a href="#">FAQ</a> <a href="#">Контакты</a></nav>
+          </div>
+        </div>
+        <div class="col-3 col-sm-4 col-lg-2"><a href="" class="header__login d-flex align-items-center justify-content-end"><img src="img/user.svg" alt="user"> <span>ВОЙТИ</span></a></div>
       </div>
-      <div class="row header__row d-flex align-items-center">
-        <div class="col-2"><a href="index.html" class="header__logo"><img src="img/logoheader.svg" alt=""></a></div>
-        <div class="col-8 d-flex align-items-center justify-content-between">
+      <div class="row header__row d-none d-lg-flex align-items-center">
+        <div class="col-2"><a data-da=".js-adaptive-logo,991,1" href="index.html" class="header__logo"><img src="img/logoheader.svg" alt=""></a></div>
+        <div class="col-7 col-xl-8 d-flex align-items-center justify-content-between">
           <div class="header__text">Цены ниже,<br>доставка быстрее!</div>
           <div class="header__search">
+            <div class="header__search-img"><img src="img/search.svg" class="js-search" alt=""></div>
             <form action="">
-              <div class="form-wrapper-header"><span><input type="search" class="form-control" placeholder="Генераторы озона"></span></div>
+              <div class="form-wrapper-header"><span><input type="search" class="form-control" placeholder="Генераторы озона"> </span><span><button type="submit">
+                    <div><img src="img/search.svg" alt=""></div>
+                  </button></span></div>
             </form>
           </div>
           <div class="header__info">Волоколамское ш. 112, к.1с3а<br>Пн-Пт с 8:00 до 21:00, Сб-Вс с 9:00 до 17:00</div>
         </div>
-        <div class="col-2">
+        <div class="col-3 col-xl-2 d-flex justify-content-end">
           <div class="header__tel d-flex align-items-center flex-wrap justify-content-between"><a href="tel:8 800 000 00 00" class="header__link">8 800 000 00 00 </a><a href="#" class="btn header__btn js-call">ЗАКАЗАТЬ ЗВОНОК </a><a href="#" class="header__icon"><img src="img/telegram.svg" alt=""> </a><a href="#" class="header__icon"><img src="img/whatsapp.svg" alt=""></a></div>
         </div>
       </div>
       <div class="row header__row d-flex align-items-center">
-        <div class="col-2"><a href="#" class="header__catalog d-flex align-items-center"><img src="img/burger.svg" alt=""> <span>КАТАЛОГ ТОВАРОВ</span></a></div>
-        <div class="col-8 d-flex align-items-center">
-          <nav id="header-menu-two"><a href="#">НОВИНКИ</a> <a href="#">ПОЛЕЗНЫЕ СТАТЬИ</a> <a href="#">ПРОИЗВОДИТЕЛИ</a></nav><a href="#" class="btn btn-blue header__btn js-assortment">ПОДОБРАТЬ ОБОРУДОВАНИЕ</a>
+        <div class="col-3 col-sm-4 col-lg-2"><a href="#" class="header__catalog d-flex align-items-center"><img src="img/burger.svg" alt="" class="d-none d-lg-block"> <span>КАТАЛОГ ТОВАРОВ</span></a>
+          <div class="header-catalog__wrapper">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-lg-7 col-xl-6">
+                  <ul class="header-catalog__list">
+                    <li><a href="#">Генераторы озона</a></li>
+                    <li><a href="#">Установки озонирования воды</a></li>
+                    <li><a href="#">Установки озонирования воздуха</a></li>
+                    <li><a href="#">Системы очистки воды и воздуха</a></li>
+                    <li><a href="#">Увлажнители воздуха</a></li>
+                    <li><a href="#">Осушители воздуха</a></li>
+                    <li><a href="#">Генераторы озона</a></li>
+                    <li><a href="#">Установки озонирования воды</a></li>
+                    <li><a href="#">Генераторы озона</a></li>
+                    <li><a href="#">Установки озонирования воды</a></li>
+                    <li><a href="#">Установки озонирования воздуха</a></li>
+                    <li><a href="#">Системы очистки воды и воздуха</a></li>
+                    <li><a href="#">Увлажнители воздуха</a></li>
+                    <li><a href="#">Осушители воздуха</a></li>
+                    <li><a href="#">Генераторы озона</a></li>
+                    <li><a href="#">Генераторы озона</a></li>
+                  </ul>
+                </div>
+                <div class="d-none d-lg-flex col-lg-5 col-xl-6">
+                  <div class="header-catalog__img" style="background-image: url('img/menuhoverbg.jpg');"><img src="img/menuhover.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-2">
-          <div class="header__basket d-flex align-items-center"><img src="img/basketico.svg" alt=""> <span>10 шт. на 27 000 ₽</span></div>
+        <div class="col-6 col-sm-4 col-lg-8 d-flex justify-content-center justify-content-lg-between align-items-center">
+          <nav data-da=".hamburger-menu,991,last" id="header-menu-two"><a href="#">НОВИНКИ</a> <a href="#">ПОЛЕЗНЫЕ СТАТЬИ</a> <a href="#">ПРОИЗВОДИТЕЛИ</a></nav><a href="#" class="btn btn-blue header__btn js-assortment">ПОДОБРАТЬ ОБОРУДОВАНИЕ</a>
+        </div>
+        <div class="col-3 col-sm-4 col-lg-2">
+          <div class="header__basket d-flex align-items-center"><img src="img/basketico.svg" alt=""> <span>10 шт. на </span><span>&nbsp; 27 000 ₽</span></div>
         </div>
       </div>
     </div>
@@ -623,8 +661,7 @@
     <div class="footer__line-two">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-xl-3 d-flex justify-content-center align-items-center align-items-xl-start flex-xl-column justify-content-md-between">
-            <div class="footer__logo"><img src="img/logof.svg" alt=""></div>
+          <div class="col-12 col-xl-3 d-flex justify-content-center align-items-center align-items-xl-start flex-xl-column justify-content-md-between"><a href="#" class="footer__logo d-flex"><img src="img/logof.svg" alt=""></a>
             <p class="footer__descr">Вся информация на сайте – собственность интернет-магазина ТриОзон. Публикация информации с сайта ТриОзон без разрешения запрещена. Все права защищены.<br><br>Информация на сайте ТриОзон не является публичной офертой. Указанные цены действуют только при оформлении заказа через интернет-магазин ТриОзон.</p>
           </div>
           <div class="col-12 col-xl-9">

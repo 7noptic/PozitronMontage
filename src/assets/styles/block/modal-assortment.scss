@@ -8,8 +8,7 @@
   overflow-y: auto;
   z-index: 1000;
   border-left: 1px solid $blue;
-  display: flex;
-  align-items: center;
+
   &.active {
     right: 0;
   }
@@ -31,7 +30,6 @@
     max-width: 570px;
     height: auto;
     overflow: auto;
-
 
   }
 

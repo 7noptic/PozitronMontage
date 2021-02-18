@@ -9,7 +9,7 @@
   z-index: 1000;
   border-right: 1px solid $blue;
   display: flex;
-  align-items: center;
+  
   width: 100%;
   max-width: 480px;
   &.active {
@@ -25,7 +25,6 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
-
   }
 
   &__row {
