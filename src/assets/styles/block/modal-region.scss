@@ -71,6 +71,9 @@
     font-size: 12px;
     display: block;
     width: 100%;
+    &:hover{
+      color: $blue;
+    }
   }
   &__exit {
     font-size: 26px;

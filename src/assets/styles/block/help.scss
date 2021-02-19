@@ -1,6 +1,8 @@
 .help {
   display: flex;
-
+&.footer-fix{
+  margin-bottom: -60px;
+}
   &__gray, &__bg {
     width: 50%;
   }

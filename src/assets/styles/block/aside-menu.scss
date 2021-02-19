@@ -1,0 +1,36 @@
+.aside-menu{
+    padding-bottom: 30px;
+    &__link{
+        display: block;
+        width: 70%;
+        font-size: 16px;line-height: 40px;
+        padding: 11px 0;
+        border-top: 1px solid darken($gray, 30%);
+        color: darken($gray, 30%);
+        &:hover{
+            color: $blue;
+        }
+        &.active{
+            color: black;
+        }
+        &:last-child,&:last-of-type{
+            border-bottom: 1px solid darken($gray, 30%);
+        }
+    }
+}
+@media screen and (max-width: 1199px){
+    .aside-menu{
+        &__link{
+            width: 90%;
+            font-size: 15px;
+        }
+    }
+}
+@media screen and (max-width: 991px){
+    .aside-menu{
+        &__link{
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+}

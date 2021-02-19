@@ -8,14 +8,18 @@
 @import "block/articles-block";
 @import "block/about-block";
 @import "block/awards-block";
+@import "block/aside-menu";
+@import "block/aboutus";
 /* В */
 @import "block/bootstrap";
 @import "block/btn";
 @import "block/banner";
 @import "block/board";
+@import "block/basket.scss";
 /* C */
 @import "block/catalog-block";
 @import "block/card";
+@import "block/contacts"; 
 /* D */
 
 /* E */
@@ -46,6 +50,7 @@
 @import "block/modal-form";
 @import "block/modal-one-click";
 @import "block/modal-assortment";
+@import "block/map";
 /* N */
 @import "block/line-nav";
 /* O */

@@ -42,8 +42,19 @@ let header = document.querySelector('.header'),
         modalOneClick = document.querySelector('.modal-one-click'),
         modalAssortment = document.querySelector('.modal-assortment'),
         regionSelect = document.querySelectorAll('.modal-region__link'),
-        regionBtn = document.querySelector('.js-region-city');
+        regionBtn = document.querySelector('.js-region-city'),
+        regionTrigger = 0;
 
+/* Сохранение значения выбранного города */
+        
+        if(regionTrigger = 0){
+            localStorage.setItem('city', 'Санкт-Петербург');
+        let cityValue = localStorage.getItem('city');
+        regionBtn.innerHTML = cityValue;
+        }else{
+            let cityValue = localStorage.getItem('city');
+        regionBtn.innerHTML = cityValue;
+        }
     document.addEventListener('click', e => {
 
         let target = e.target;
@@ -64,13 +75,17 @@ let header = document.querySelector('.header'),
 
             regionSelect.forEach(item => {
                 if (item == target) {
-                    regionBtn.innerHTML = item.innerHTML;
+                    localStorage.setItem('city', item.innerHTML);
+                    let cityValue = localStorage.getItem('city');
+                    regionBtn.innerHTML = cityValue;
                 }
             });
             openCloseModal(e, modalRegion);
         } else if (target.classList.contains('js-region-close')) {
             let city = document.querySelector('.js-select-city');
-            regionBtn.innerHTML = city.innerHTML;
+            localStorage.setItem('city', city.innerHTML);
+                    let cityValue = localStorage.getItem('city');
+                    regionBtn.innerHTML = cityValue;
             openCloseModal(e, modalRegion);
         }
 
