@@ -65,7 +65,7 @@
                         <div class="header__search-img ">
                             <img src="img/search.svg" class="js-search" alt="">
                         </div>
-                        <form action="">
+                        <form action="POST">
                             <div class="form-wrapper-header">
                                 <span>
                                     <input type="search" class="form-control" placeholder="Генераторы озона">
@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-3 col-xl-2 d-flex justify-content-end">
                     <div class="header__tel d-flex align-items-center flex-wrap justify-content-between">
-                        <a href="tel:8 800 000 00 00" class="header__link">
+                        <a href="tel:88000000000" class="header__link">
                             8 800 000 00 00
                         </a>
                         <a href="#" class="btn header__btn js-call">
@@ -133,7 +133,7 @@
                                 </div>
     
                                 <div class="d-none d-lg-flex col-lg-5 col-xl-6">
-                                    <div class="header-catalog__img" style="background-image: url('img/menuhoverbg.jpg');">
+                                    <div class="header-catalog__img" style="background-image: url('img/menuhoverbg-min.jpg');">
     <img src="img/menuhover.png" alt="">
                                     </div>
                                 </div>
@@ -210,7 +210,7 @@
                                             class="basket-item__img col-lg-1 col-md-3 col-sm-4  d-flex align-items-center">
                                             <div class="basket-item__img-wrap">
                                                 <div class="basket-item__marker">-30%</div>
-                                                <img src="img/basket.jpg" alt="">
+                                                <img src="img/basket-min.jpg" alt="">
                                             </div>
                                         </a>
                                         <div class="basket-item__descr col-lg-4 col-md-9 col-sm-7  ">
@@ -227,15 +227,11 @@
                                         <div
                                             class="basket-item__count col-lg-2 col-md-3 col-sm-4 d-flex align-items-center">
                                             <button class="basket-item__count-prev js-basket-count-btn" data-delta="-1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                             <input class="js-basket-count-input" value="1" type="text" placeholder="1">
                                             <button class="basket-item__count-next js-basket-count-btn" data-delta="1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                         </div>
                                         <div class="basket-item__cost col-lg-2 col-md-3 col-sm-4">
@@ -259,7 +255,7 @@
                                         <a href="#"
                                             class="basket-item__img col-lg-1 col-md-3 col-sm-4  d-flex align-items-center">
                                             <div class="basket-item__img-wrap">
-                                                <img src="img/basket.jpg" alt="">
+                                                <img src="img/basket-min.jpg" alt="">
                                             </div>
                                         </a>
                                         <div class="basket-item__descr col-lg-4 col-md-9 col-sm-7  ">
@@ -276,15 +272,11 @@
                                         <div
                                             class="basket-item__count col-lg-2 col-md-3 col-sm-4 d-flex align-items-center">
                                             <button class="basket-item__count-prev js-basket-count-btn" data-delta="-1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                             <input class="js-basket-count-input" value="1" type="text" placeholder="1">
                                             <button class="basket-item__count-next js-basket-count-btn" data-delta="1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                         </div>
                                         <div class="basket-item__cost col-lg-2 col-md-3 col-sm-4">
@@ -307,7 +299,7 @@
                                             class="basket-item__img col-lg-1 col-md-3 col-sm-4  d-flex align-items-center">
                                             <div class="basket-item__img-wrap">
                                                 <div class="basket-item__marker">-30%</div>
-                                                <img src="img/basket.jpg" alt="">
+                                                <img src="img/basket-min.jpg" alt="">
                                             </div>
                                         </a>
                                         <div class="basket-item__descr col-lg-4 col-md-9 col-sm-7  ">
@@ -324,15 +316,11 @@
                                         <div
                                             class="basket-item__count col-lg-2 col-md-3 col-sm-4 d-flex align-items-center">
                                             <button class="basket-item__count-prev js-basket-count-btn" data-delta="-1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                             <input class="js-basket-count-input" value="1" type="text" placeholder="1">
                                             <button class="basket-item__count-next js-basket-count-btn" data-delta="1">
-                                                <div>
                                                     <img src="img/basketarr.svg" alt="">
-                                                </div>
                                             </button>
                                         </div>
                                         <div class="basket-item__cost col-lg-2 col-md-3 col-sm-4">
@@ -353,7 +341,7 @@
 
                         </div>
 
-                        <form action="" id="basket" class="basket-form col-sm-12 col-md-12">
+                        <form action="POST" id="basket" class="basket-form col-sm-12 col-md-12">
                             <div class="basket-form">
                                 <div class="basket-form__title">Информация о покупателе</div>
                                 <div class="basket-form__input basket-form__input-name">
@@ -422,7 +410,7 @@
                                             </label>
                                         </div>
                                         <div class="card__payment-radio">
-                                            <label abel>
+                                            <label>
                                                 <div class="card__payment-radio__top">
                                                     <div class="img">
                                                         <img src="img/card-payment-2.svg" alt="">
@@ -483,8 +471,8 @@
 
                             <div class="basket-policy">
                                 <input type="checkbox" class="form-control check help-form__check" name="agreement"
-                                    id="form-call">
-                                <label for="form-call" class="agreement help-form__agreement">Отправляя заявку, я
+                                    id="form-call-2">
+                                <label for="form-call-2" class="agreement help-form__agreement">Отправляя заявку, я
                                     соглашаюсь
                                     на обработку персональьных данных</label>
                             </div>
@@ -676,6 +664,7 @@
 
         <section class="modal-region">
             <div class="modal-region__wrapper">
+<h2 class="title modal-region__title">Выбрать город</h2>
                 <div class="modal-region__row">
                     <p class="modal-region__city">
                         Ваш город: <span class="js-select-city">Санкт-Петербург</span>?

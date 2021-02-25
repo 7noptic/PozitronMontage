@@ -117,7 +117,8 @@
     }
     &-form {
         margin: 0 auto;
-        width: 680px;
+        width: 100%;
+max-width: 680px;
         &__title {
             font-size: 18px;
             font-weight: 700;
