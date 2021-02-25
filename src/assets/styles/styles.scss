@@ -10,26 +10,31 @@
 @import "block/awards-block";
 @import "block/aside-menu";
 @import "block/aboutus";
+@import "block/articles";
+@import "block/article";
 /* В */
 @import "block/bootstrap";
 @import "block/btn";
 @import "block/banner";
 @import "block/board";
-@import "block/basket.scss";
+@import "block/basket";
+@import "block/board-video";
+@import "block/block-reviews";
 /* C */
 @import "block/catalog-block";
 @import "block/card";
 @import "block/contacts"; 
 /* D */
-
+@import "block/delivery";
 /* E */
 
 /* F */
 @import "block/form";
 @import "block/form-subscribe";
 @import "block/footer";
+@import "block/faq";
 /* G */
-
+@import "block/glitch";
 /* H */
 @import "block/header";
 @import "block/help";
@@ -39,11 +44,11 @@
 /* I */
 
 /* J */
-
+@import "block/job";
 /* K */
 
 /* L */
-
+@import "block/lwptoc";
 /* M */
 @import "block/modal-region";
 @import "block/modal-call";
@@ -51,6 +56,7 @@
 @import "block/modal-one-click";
 @import "block/modal-assortment";
 @import "block/map";
+@import "block/manufacturers";
 /* N */
 @import "block/line-nav";
 /* O */
@@ -58,21 +64,25 @@
 /* P */
 @import "block/product-block";
 @import "block/partners";
+@import "block/page404";
 /* Q */
 
 /* R */
 @import "block/rating-star";
 @import "block/recommend";
+@import "block/reviews";
 /* S */
 @import "block/swiper";
 @import "block/sidebar";
+@import "block/sitemap";
+@import "block/search";
 /* T */
 @import "block/title";
 @import "block/tags";
 /* U */
 
 /* V */
-@import "block/views"
+@import "block/views";
 /* W */
 
 /* X */

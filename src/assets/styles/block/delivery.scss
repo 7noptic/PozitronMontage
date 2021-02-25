@@ -1,0 +1,245 @@
+.delivery{
+  padding: 60px 0;
+  &__title{
+    padding-bottom: 30px;
+    margin-top: -20px;
+  }
+  &__subtitle{
+    font-size: 18px;
+    padding-bottom: 40px;
+    font-weight: 700;
+  }
+  &__img{
+max-height: 80px;
+    padding-bottom: 10px;
+    &>img{
+      max-height: 80px;
+    }
+
+  }
+  &-pay{
+    &__item{
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+    }
+    &__name{
+      padding-left: 25px;
+      font-size: 12px;
+    }
+  }
+  &__name{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  &__link{
+    font-size: 14px;
+    &:hover{
+      color: $blue;
+    }
+  }
+  &__price{
+    padding: 5px 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+  }
+  &__text{
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &__content{
+    font-size: 14px;
+    line-height: 17px;
+    & p,& div{
+      font-size: 14px;
+      line-height: 17px;
+    }
+    & ul li{
+      padding-bottom: 10px;
+    }
+
+    &>h2,&>h3,&>h4,&>h5,&>h6{
+      padding-bottom: 25px;
+    }
+  }
+  &__item{
+    padding-bottom: 60px;
+    padding-right: 10%;
+  }
+}
+
+@media screen  and (max-width: 1399px){
+  .delivery{
+    padding: 60px 0;
+    &__title{
+      padding-bottom: 30px;
+      margin-top: -20px;
+    }
+    &__subtitle{
+      font-size: 17px;
+      padding-bottom: 40px;
+      font-weight: 700;
+    }
+    &__img{
+      max-height: 80px;
+      padding-bottom: 10px;
+      &>img{
+        max-height: 80px;
+      }
+
+    }
+    &-pay{
+      &__item{
+        display: flex;
+        align-items: center;
+      }
+      &__name{
+        padding-left: 25px;
+        font-size: 12px;
+      }
+    }
+    &__name{
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 500;
+      padding-bottom: 15px;
+      padding-top: 15px;
+    }
+    &__link{
+      font-size: 13px;
+      &:hover{
+        color: $blue;
+      }
+    }
+    &__price{
+      padding: 5px 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 21px;
+    }
+    &__text{
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    &__item{
+      padding-bottom: 60px;
+      padding-right: 1%;
+    }
+  }
+
+}
+@media screen and (max-width: 991px){
+  .delivery{
+    padding: 40px 0;
+    &__title{
+      padding-bottom: 30px;
+      margin-top: -13px;
+    }
+
+    &__subtitle{
+      font-size: 15px;
+      padding-bottom: 30px;
+      font-weight: 700;
+    }
+
+    &-pay{
+
+      &__name{
+        padding-left: 10px;
+        font-size: 11px;
+      }
+    }
+    &__name{
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 500;
+      padding-bottom: 15px;
+      padding-top: 15px;
+    }
+    &__link{
+      font-size: 12px;
+
+    }
+    &__price{
+      padding: 5px 0 10px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 19px;
+    }
+    &__text{
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    &__item{
+      padding-bottom: 40px;
+      padding-right: 1%;
+    }
+    &__content{
+      font-size: 12px;
+      line-height: 15px;
+      &>p,&>div{
+        font-size: 12px;
+        line-height: 15px;
+        padding-bottom: 15px;
+      }
+
+    }
+  }
+
+}
+@media screen and(max-width: 767px){
+  .delivery{
+    padding: 35px 0;
+    &__title{
+      padding-bottom: 30px;
+      margin-top: 0;
+    }
+    &__content{
+      font-size: 13px;
+      line-height: 16px;
+      &>p,&>div{
+        font-size: 13px;
+        line-height: 16px;
+        padding-bottom: 15px;
+      }
+      & >ul > li{
+        padding-bottom: 8px;
+      }
+      & > img{
+        margin: 15px 0 40px;
+      }
+      &>h2,&>h3,&>h4,&>h5,&>h6{
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+@media screen and(max-width: 575px){
+  .delivery{
+    padding: 30px 0;
+    &__item{
+      padding-right: 15px;
+    }
+    &__title{
+      padding-bottom: 25px;
+      margin-top: 0;
+    }
+    &__content{
+      font-size: 12px;
+      line-height: 15px;
+      &>p,&>div{
+        font-size: 12px;
+        line-height: 15px;
+      }
+      & > img{
+        margin: 15px 0 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.entry-title{
+  padding-bottom: 20px;
+  & > a{
+    &:hover{
+      color: $blue;
+    }
+  }
+
+}

@@ -21,6 +21,8 @@ window.addEventListener('DOMContentLoaded', () => {
         hamburgerBtn = header.querySelector('.js-burger'),
         hamburgerMenu = header.querySelector('.hamburger-menu');
 
+
+
     header.addEventListener('click', (e) => {
         let target = e.target;
         if (target && target.classList.contains('js-search')) {
@@ -44,6 +46,13 @@ window.addEventListener('DOMContentLoaded', () => {
         regionSelect = document.querySelectorAll('.modal-region__link'),
         regionBtn = document.querySelector('.js-region-city');
 
+    if(localStorage.getItem('city') != null){
+        console.log(localStorage.getItem('city'));
+        console.log(typeof(localStorage.getItem('city')));
+        regionBtn.innerHTML = localStorage.getItem('city');
+    } else{
+        regionBtn.innerHTML = 'Москва';
+    }
     document.addEventListener('click', e => {
 
         let target = e.target;
@@ -64,13 +73,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
             regionSelect.forEach(item => {
                 if (item == target) {
-                    regionBtn.innerHTML = item.innerHTML;
+                    let citiValue = item.innerHTML;
+                    localStorage.setItem('city', citiValue)
+                    let testValue = localStorage.getItem('city')
+                    regionBtn.innerHTML = testValue.innerHTML;
+                    regionBtn.innerHTML = testValue;
                 }
             });
             openCloseModal(e, modalRegion);
         } else if (target.classList.contains('js-region-close')) {
             let city = document.querySelector('.js-select-city');
-            regionBtn.innerHTML = city.innerHTML;
+            localStorage.setItem('city', city.innerHTML);
+            let testValue = localStorage.getItem('city');
+            regionBtn.innerHTML = testValue;
             openCloseModal(e, modalRegion);
         }
 
@@ -106,6 +121,17 @@ window.addEventListener('DOMContentLoaded', () => {
         navigation: {
             nextEl: '.tags__next',
             prevEl: '.tags__prev',
+        },
+
+    });
+    let swiperTagsTwo = new Swiper('.swiper-container-tags-2', {
+        slidesPerView: "auto",
+        spaceBetween: 0,
+        allowSlidePrev: true,
+        allowSlideNext: true,
+        navigation: {
+            nextEl: '.tags__next-2',
+            prevEl: '.tags__prev-2',
         },
 
     });
@@ -179,7 +205,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
     });
-
     let swiperObject = new Swiper('.swiper-container-object', {
         slidesPerView: 3,
         spaceBetween: 30,
@@ -424,13 +449,19 @@ window.addEventListener('DOMContentLoaded', () => {
         articleParents = document.querySelector('.articles-block'),
         hitLink = document.querySelectorAll('.js-hit-link'),
         hitTabs = document.querySelectorAll('.js-hit-tabs'),
-        hitParents = document.querySelector('.hit');
+        hitParents = document.querySelector('.hit'),
+        jobLink = document.querySelectorAll('.job__header'),
+        jobTabs = document.querySelectorAll('.job__bottom'),
+        jobParents = document.querySelector('.job');
 
     if (hitParents) {
-        showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link')
+        showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
     }
     if (articleParents) {
-        showHideTabs(0, articleLink, articleTabs, articleParents, 'js-article-link')
+        showHideTabs(0, articleLink, articleTabs, articleParents, 'js-article-link');
+    }
+    if (jobParents) {
+        showHideTabs(0, jobLink, jobTabs, jobParents, 'job__header');
     }
 
     function showHideTabs(i = 0, link, tabs, parent, classContains) {
@@ -462,7 +493,33 @@ window.addEventListener('DOMContentLoaded', () => {
             item.classList.remove('active');
         });
     }
+    /* RATING */
+    let ratingParent = document.querySelector('.js-rating'),
+        ratingInput = document.querySelector('#js-rating'),
+        ratingStar = document.querySelectorAll('.js-rating > li');
 
+    if (ratingParent) {
+        ratingParent.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = event.target;
+            if (target && target.tagName == 'LI') {
+                ratingStar.forEach((item, i) => {
+                    item.classList.remove('active');
+                });
+                for (let i = 0; i => ratingStar.length; i++) {
+                    if (ratingStar[i] == target) {
+                        ratingStar[i].classList.add('active');
+                        ratingInput.value = ++i;
+                        return
+                    } else {
+                        ratingStar[i].classList.add('active');
+                    }
+                }
+            }
+
+        });
+    }
+    /* footer link */
     const footerMenuParent = document.querySelector('.footer'),
         footerLink = document.querySelectorAll('.js-footer-title'),
         footerList = document.querySelectorAll('.js-footer-menu');
@@ -568,7 +625,59 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+    /* VIDEO */
+    function findVideos() {
+        let videos = document.querySelectorAll('.video');
 
+        for (let i = 0; i < videos.length; i++) {
+            setupVideo(videos[i]);
+        }
+    }
+
+    function setupVideo(video) {
+        let link = video.querySelector('.video__link');
+        let media = video.querySelector('.video__media');
+        let button = video.querySelector('.video__button');
+        let id = parseMediaURL(media);
+
+        video.addEventListener('click', () => {
+            let iframe = createIframe(id);
+
+            link.remove();
+            button.remove();
+            video.appendChild(iframe);
+        });
+
+        link.removeAttribute('href');
+        video.classList.add('video--enabled');
+    }
+
+    function parseMediaURL(media) {
+        let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/hqdefault\.jpg/i;
+        let url = media.src;
+        let match = url.match(regexp);
+
+        return match[1];
+    }
+
+    function createIframe(id) {
+        let iframe = document.createElement('iframe');
+
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'autoplay');
+        iframe.setAttribute('src', generateURL(id));
+        iframe.classList.add('video__media');
+
+        return iframe;
+    }
+
+    function generateURL(id) {
+        let query = '?rel=0&showinfo=0&autoplay=1';
+
+        return 'https://www.youtube.com/embed/' + id + query;
+    }
+
+    findVideos();
     /* Reviews Stars */
 
     let starsContainer = document.querySelector('.card__rate');
@@ -672,7 +781,7 @@ window.addEventListener('DOMContentLoaded', () => {
         context.parentNode.parentNode.parentNode.querySelector('.label span').innerHTML = context.innerHTML;
     }
 
-    // K0RZINA NAHUI
+    // K0RZINA
 
     let basketItems = document.querySelectorAll('.basket-item');
     let basketSum = document.querySelector('.js-basket-sum')

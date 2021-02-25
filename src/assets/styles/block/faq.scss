@@ -1,0 +1,86 @@
+.faq{
+  &__item{
+    padding: 15px 0 25px!important;
+& > h4{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
+}
+    & > p{
+      font-size: 14px;
+      padding-bottom: 30px;
+    }
+  }
+  &__answer{
+    border-left: 1px solid  #005DA0;
+  }
+  &__top{
+    font-size: 16px;
+    line-height: 40px;
+    padding-left: 27px;
+    font-weight: 500;
+
+  }
+  &__bottom{
+    padding: 17px 27px 40px;
+    font-size: 14px;
+    background: #F3F3F3;
+  }
+}
+
+@media screen  and (max-width: 991px){
+  .faq{
+    &__item{
+      padding: 15px 0!important;
+      & > h4{
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 35px;
+      }
+      & > p{
+        font-size: 13px;
+        padding-bottom: 25px;
+      }
+    }
+
+    &__top{
+      font-size: 15px;
+      line-height: 35px;
+      padding-left: 25px;
+      font-weight: 500;
+
+    }
+    &__bottom{
+      padding: 15px 25px 30px;
+      font-size: 13px;
+    }
+  }
+}
+@media screen  and (max-width: 575px){
+  .faq{
+    &__item{
+      padding: 15px 0!important;
+      & > h4{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 30px;
+      }
+      & > p{
+        font-size: 12px;
+        padding-bottom: 20px;
+      }
+    }
+
+    &__top{
+      font-size: 14px;
+      line-height: 30px;
+      padding-left: 15px;
+      font-weight: 500;
+
+    }
+    &__bottom{
+      padding: 15px 15px 20px;
+      font-size: 12px;
+    }
+  }
+}

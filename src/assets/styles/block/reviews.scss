@@ -1,0 +1,356 @@
+.reviews{
+  padding: 30px 0;
+  &__title{
+    padding-bottom: 50px;
+  }
+  &__item{
+    padding-bottom: 50px;
+    & > div > div> .reviews__item{
+      padding-bottom: 0px;
+    }
+  }
+  &__img{
+    & > img{
+      border-radius: 50%;
+    }
+  }
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  &__date{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  &__content{
+    & > h3{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      padding-bottom: 15px;
+    }
+    & > p{
+      font-size: 14px;
+      padding-bottom: 30px;
+    }
+  }
+  &__name{
+
+  }
+  &-form{
+
+    max-width: 440px;
+    &__title{
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  &__text{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  &__wrapper{
+    padding: 40px 30px 45px;
+    background: #F3F3F3;
+    & > span{
+      display: block;
+      width: 100%;
+      margin-bottom: 20px;
+      &:last-of-type,&:last-child{
+        margin-bottom: 30px;
+      }
+      &> textarea{
+        width: 100%;
+        padding: 20px;
+        height: 120px;
+        border-radius: 4px;
+        &::placeholder{
+          opacity: 0.4;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+      & > input{
+        width: 100%;
+        padding: 20px;
+        border-radius: 4px;
+        &::placeholder{
+          opacity: 0.4;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+
+  }
+  &__btn{
+    height: 60px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 30px;
+    &-gray{
+
+    }
+  }
+  &__agreement{
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    line-height: 15px;
+    padding-top: 30px;
+  }
+}
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+@media screen and (max-width: 1199px)
+{
+  .reviews{
+    padding: 30px 0;
+    &__title{
+      padding-bottom: 40px;
+    }
+    &__item{
+      padding-bottom: 40px;
+      & > div > div> .reviews__item{
+        padding-bottom: 0px;
+      }
+    }
+    &__img{
+      & > img{
+        border-radius: 50%;
+      }
+    }
+    &__top{
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+    }
+    &__date{
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 14px;
+    }
+    &__content{
+      & > h3{
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 15px;
+      }
+      & > p{
+        font-size: 13px;
+        padding-bottom: 25px;
+      }
+    }
+    &__text{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+@media screen and (max-width: 991px)
+{
+  .reviews{
+    &__title{
+      padding-bottom: 30px;
+    }
+    &__item{
+      padding-bottom: 35px;
+    }
+    &-form{
+      margin-top: 40px;
+      max-width: 440px;
+      &__title{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+        padding-bottom: 30px;
+      }
+    }
+    &__text{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    &__wrapper{
+
+      & > span{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        &:last-of-type,&:last-child{
+          margin-bottom: 30px;
+        }
+        &> textarea{
+          width: 100%;
+          padding: 20px;
+          height: 120px;
+          border-radius: 4px;
+          &::placeholder{
+            opacity: 0.4;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+        & > input{
+          width: 100%;
+          padding: 20px;
+          border-radius: 4px;
+          &::placeholder{
+            opacity: 0.4;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+      }
+
+    }
+    &__btn{
+      height: 50px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin-top: 30px;
+      &-gray{
+
+      }
+    }
+    &__agreement{
+    }
+  }
+}
+@media screen and (max-width: 767px)
+{
+  .reviews{
+    &__title{
+      padding-bottom: 30px;
+    }
+    &__item{
+      padding-bottom: 30px;
+
+    }
+    &__img{
+      & > img{
+        border-radius: 50%;
+      }
+
+      margin-bottom: 30px;
+    }
+    &__top{
+    }
+    &__date{
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 14px;
+    }
+    &__content{
+      & > h3{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        padding-bottom: 15px;
+      }
+      & > p{
+        font-size: 12px;
+        padding-bottom: 20px;
+      }
+    }
+    &__text{
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+    }
+    &__wrapper{
+      padding: 30px 15px;
+      background: #F3F3F3;
+      & > span{
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        &:last-of-type,&:last-child{
+          margin-bottom: 30px;
+        }
+        &> textarea{
+          width: 100%;
+          padding: 15px;
+          height: 120px;
+          border-radius: 4px;
+          &::placeholder{
+            opacity: 0.4;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+        & > input{
+          width: 100%;
+          padding: 15px;
+          border-radius: 4px;
+          &::placeholder{
+            opacity: 0.4;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+          }
+        }
+      }
+
+    }
+    &__btn{
+      height: 50px;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      margin-top: 30px;
+      &-gray{
+
+      }
+    }
+    &__agreement{
+    }
+  }
+}
+@media screen and (max-width: 575px){
+  .reviews{
+    &__img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__wrapper{
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+
+}
+@media screen and (max-width: 470px){
+.reviews{
+  &-form{
+    margin-bottom: -71px;
+  }
+}
+}

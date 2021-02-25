@@ -1,0 +1,29 @@
+.sitemap{
+  padding: 40px 0;
+  &__title{
+    padding-bottom: 30px;
+  }
+  &__content{
+    & > ul{
+      margin: 0;
+      padding: 0;
+      & > li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        & > a{
+          display: inline-block;
+          font-size: 14px;
+          line-height: 17px;
+          padding-bottom: 5px;
+          &::first-letter{
+            text-transform: uppercase;
+          }
+          &:hover{
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

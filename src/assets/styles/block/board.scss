@@ -1,4 +1,7 @@
 .board{
   display: flex;
   flex-wrap: wrap;
+  &__title{
+    padding-top: 30px;
+  }
 }

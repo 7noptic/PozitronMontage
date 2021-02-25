@@ -1,0 +1,47 @@
+.lwptoc {
+  &_item {
+    max-width: 360px;
+    display: block;
+    padding: 25px 20px;
+    border-top: 1px solid #C4C4C4;
+
+    & > a > span {
+      font-size: 16px;
+      font-weight: 500;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &:last-child, &:last-of-type {
+      border-bottom: 1px solid #C4C4C4;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .lwptoc {
+    &_item {
+      &s {
+        padding-top: 40px;
+      }
+
+      max-width: 100%;
+      display: block;
+      padding: 15px;
+      border-top: 1px solid #C4C4C4;
+
+      & > a > span {
+        font-size: 14px;
+        font-weight: 500;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+
+    }
+  }
+}

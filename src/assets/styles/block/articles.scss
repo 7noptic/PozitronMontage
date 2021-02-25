@@ -1,0 +1,27 @@
+.articles{
+  &__item{
+    padding: 0 15px 50px;
+    display: block;
+    &:hover{
+      &  h3{
+        color: $blue;
+      }
+    }
+    & > h3{
+      font-size: 18px;
+      font-weight: 700;
+      padding: 20px 0;
+    }
+  }
+  &__img{
+    max-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    & > img{
+      max-height: 340px;
+      object-fit: cover;
+    }
+  }
+}
