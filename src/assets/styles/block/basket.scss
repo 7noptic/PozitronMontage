@@ -371,6 +371,16 @@ max-width: 680px;
         &-total {
             &__item {
                 padding: 18px 0px 15px 0px;
+                >div {
+                    &:nth-child(1) {
+                        padding: 0;
+                        padding-left: 10px;
+                    }
+                    &:nth-child(2) {
+                        padding: 0;
+                        padding-right: 10px;
+                    }
+                }
             }
         }
         &-policy {

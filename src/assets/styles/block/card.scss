@@ -617,11 +617,15 @@
         }
       }
       &-gallery {
-       &__mini{
-height: 100%;
-       &-wrap{
-         height: 420px;
-       }
+        &__img {
+          visibility: hidden;
+          height: 200px;
+        }
+        &__mini{
+          height: 100%;
+          &-wrap{
+            height: 420px;
+          }
           .swiper {
             &-wrapper{
               height: 160px ;
