@@ -43,6 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
         modalRegion = document.querySelector('.modal-region'),
         modalOneClick = document.querySelector('.modal-one-click'),
         modalAssortment = document.querySelector('.modal-assortment'),
+        modalJob = document.querySelector('.modal-job'),
+        modalSubscribe = document.querySelector('.modal-subscribe'),
         regionSelect = document.querySelectorAll('.modal-region__link'),
         regionBtn = document.querySelector('.js-region-city');
 
@@ -57,13 +59,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let target = e.target;
 
-        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit') || target.classList.contains('modal-call__btn'))) {
+        if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
         }
-        if (target && (target.classList.contains('js-card-one-click') || target.classList.contains('modal-one-click__exit') || target.classList.contains('modal-one-click__btn'))) {
+        if (target && (target.classList.contains('js-card-one-click') || target.classList.contains('modal-one-click__exit'))) {
             openCloseModal(e, modalOneClick);
         }
-        if (target && (target.classList.contains('js-assortment') || target.classList.contains('modal-assortment__exit') || target.classList.contains('modal-assortment__btn'))) {
+        if (target && (target.classList.contains('js-job') || target.classList.contains('modal-job__exit'))) {
+            openCloseModal(e, modalJob);
+        }
+        if (target && (target.classList.contains('js-subscribe') || target.classList.contains('modal-subscribe__exit'))) {
+            openCloseModal(e, modalSubscribe);
+        }
+        if (target && (target.classList.contains('js-assortment') || target.classList.contains('modal-assortment__exit'))) {
             openCloseModal(e, modalAssortment);
         }
         if (target && (target.classList.contains('js-region') || target.classList.contains('modal-region__exit'))) {

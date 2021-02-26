@@ -81,7 +81,7 @@
   &__exit {
     font-size: 26px;
     position: absolute;
-    top: 5px;
+    top: 50px;
     right: 5px;
     cursor: pointer;
     &::before{
@@ -113,4 +113,24 @@
 
 
 
+}
+@media screen and (max-width:575px){
+  .modal-region{
+  &__title{
+    padding-bottom: 30px;
+  }
+    &__text{
+      font-weight: 500;
+      font-size: 14px;
+      padding-bottom: 30px;
+    }
+    &__wrapper {
+      padding: 60px 30px;
+    }
+  
+  
+  
+  
+  
+  }
 }

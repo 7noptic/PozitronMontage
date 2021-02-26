@@ -224,13 +224,13 @@
               display: flex;
             }
             path {
-              fill: #00000030;
+              fill: #000;
               transition: 0.3s;
               transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
             }
             &:hover {
               path {
-                fill: #000;
+                fill: $blue;
               } 
             }
           }

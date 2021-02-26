@@ -21,6 +21,21 @@
       margin-bottom: 20px;
     }
   }
+  &__wrapper{
+    & > span{
+      width: 100%;
+      & > .selectric{
+margin-bottom: 20px;
+border: none;
+      }
+      & > textarea{
+        padding: 20px;
+        width: 100%;
+        height: 120px;
+        margin-bottom: 20px;
+      }
+    }
+  }
 
   &__input {
     width: 100%;
