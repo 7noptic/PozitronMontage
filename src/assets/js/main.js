@@ -617,7 +617,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
-
+/*
     function handleChange(input, min, max) {
         input.value = input.value.replace(/[^0-9]/g, '');
         if (+input.value < min) input.value = min;
@@ -631,7 +631,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let maxValue = el.getAttribute('data-max')
             handleChange(el, minValue, maxValue)
         })
-    })
+    })*/
 
     /* VIDEO */
     function findVideos() {

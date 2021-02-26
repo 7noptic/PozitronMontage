@@ -189,12 +189,12 @@
                                     <span>Цена:</span>
                                     <div class="hit__filter-row flex align-items-center">
                                         <span>от</span>
-                                        <div class="input-wrap js-input-wrap">
-                                            <input type="text" data-min="0" data-max="10000">
+                                        <div class="input-wrap">
+                                            <input type="text" onkeypress="return (event.charCode >= 46 && event.charCode <= 57 && /^\D{0,10}/.test(this.value));">
                                         </div>
                                         <span>до</span>
-                                        <div class="input-wrap js-input-wrap">
-                                            <input type="text" data-min="0" data-max="10000">
+                                        <div class="input-wrap">
+                                            <input type="text" onkeypress="return (event.charCode >= 46 && event.charCode <= 57 && /^\D{0,10}/.test(this.value));">
                                         </div>
                                         <span>₽</span>
                                     </div>

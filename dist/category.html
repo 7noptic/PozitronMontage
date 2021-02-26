@@ -103,8 +103,8 @@
               <ul>
                 <li class="hit__filter-item"><span>Цена:</span>
                   <div class="hit__filter-row flex align-items-center"><span>от</span>
-                    <div class="input-wrap js-input-wrap"><input type="text" data-min="0" data-max="10000"></div><span>до</span>
-                    <div class="input-wrap js-input-wrap"><input type="text" data-min="0" data-max="10000"></div><span>₽</span>
+                    <div class="input-wrap"><input type="text" onkeypress="return (event.charCode >= 46 && event.charCode <= 57 && /^\D{0,10}/.test(this.value));"></div><span>до</span>
+                    <div class="input-wrap"><input type="text" onkeypress="return (event.charCode >= 46 && event.charCode <= 57 && /^\D{0,10}/.test(this.value));"></div><span>₽</span>
                   </div>
                 </li>
                 <li class="hit__filter-item"><span class="js-accordion-btn">Производительность: <button><img src="img/aside-ar.svg" alt=""></button></span>
