@@ -20,3 +20,24 @@
     }
   }
 }
+
+.eye-left{
+  animation-name: eye-left, eye-left;
+  animation-duration: 1s, 1s;
+  animation-delay: 3s, 10s;
+  animation-iteration-count: 1, 1;
+}
+@keyframes eye-left {
+  0%{
+    rx: 8;
+    ry: 7.5;
+  }
+  50%{
+    rx: 8;
+    ry: 1;
+  }
+  100%{
+    rx: 8;
+    ry: 7.5;
+  }
+}
