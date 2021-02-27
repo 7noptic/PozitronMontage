@@ -379,35 +379,48 @@
                         <div class="card__payment">
                             <b>Оплата</b>
                             <div class="card__payment-wrap">
-                                <div class="card__payment-radio">
-                                    <label>
-                                        <div class="card__payment-radio__top">
-                                            <div class="img">
-                                                <img src="img/card-payment-1.svg" alt="">
-                                            </div>
-                                            <input type="radio" name="card-payment">
-                                            <span></span>
-                                        </div>
-                                        <div class="card__payment-radio__bot">
-                                            Банковской картой онлайн
-                                        </div>
-                                    </label>
-                                </div>
-                                <div class="card__payment-radio">
-                                    <label abel>
-                                        <div class="card__payment-radio__top">
-                                            <div class="img">
-                                                <img src="img/card-payment-2.svg" alt="">
-                                            </div>
-                                            <input type="radio" name="card-payment">
-                                            <span></span>
-                                        </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <div class="card__payment-radio">
+                                                <label for="radio-bank" class="label-img">
+                                                    <img src="img/card-payment-1.svg" alt="">
+                                                </label>
 
-                                        <div class="card__payment-radio__bot">
-                                            Безналичный расчет для юр. лиц
+                                                <input type="radio" name="card-payment" id="radio-bank"
+                                                       value="Банковской картой"
+                                                       required>
+                                                <label for="radio-bank" class="card__payment-radio__bot">
+
+                                                </label>
+                                                <label for="radio-bank" class="card__payment-radio__bot">
+                                                    Банковской картой
+                                                </label>
+                                            </div>
                                         </div>
-                                    </label>
+                                        <div class="col-12 col-md-6">
+                                            <div class="card__payment-radio">
+                                                <label for="radio-bank-2" class="label-img">
+                                                    <img src="img/card-payment-2.svg" alt="">
+                                                </label>
+
+                                                <input type="radio" name="card-payment" id="radio-bank-2"
+                                                       value="Банковской картой"
+                                                       required>
+                                                <label for="radio-bank-2" class="card__payment-radio__bot">
+
+                                                </label>
+                                                <label for="radio-bank-2" class="card__payment-radio__bot">
+                                                    Безналичный расчет для юр. лиц
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -1082,7 +1095,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer__line-two">
             <div class="container">
                 <div class="row">
@@ -1104,7 +1117,7 @@
                         <div class="row">
                             <div class="col-12 col-sm-6 col-md-3">
                                 <h3 class="js-footer-title footer__title">О компании</h3>
-    
+
                                 <nav class="js-footer-menu footer__menu">
                                     <a href="#">ТриОзон</a>
                                     <a href="#">Контакты</a>
@@ -1118,7 +1131,7 @@
                             <div class="col-12 col-sm-6 col-md-3">
                                 <h3 class="js-footer-title footer__title">Покупателю</h3>
                                 <nav class="js-footer-menu footer__menu">
-    
+
                                     <a href="#">Оплата и доставка</a>
                                     <a href="#">Сервис и поддержка</a>
                                     <a href="#">Часто задаваемые вопросы</a>
@@ -1131,7 +1144,7 @@
                             <div class="col-12 col-sm-6 col-md-3">
                                 <h3 class="js-footer-title footer__title">Категории</h3>
                                 <nav class="js-footer-menu footer__menu">
-    
+
                                     <a href="#">Генераторы озона</a>
                                     <a href="#">Установки озонирования воды</a>
                                     <a href="#">Установки озонирования воздуха</a>
@@ -1156,11 +1169,11 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </div>
             </div>
         </div>
-    
+
         <div class="footer__line-three">
             <div class="container">
                 <div class="row d-flex align-items-center">
@@ -1186,11 +1199,11 @@
                 </div>
             </div>
         </div>
-    
+
     </footer>
     <!-- MODAL -->
     <aside class="js-sidebars">
-    
+
         <section class="modal-call">
             <div class="modal-call__wrapper">
                 <h2 class="title modal-call__title">
@@ -1205,34 +1218,37 @@
                 <div class="modal-form">
                     <form action="post">
                         <div class="modal-form__wrapper">
-                        <span>
-                            <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
-                        </span>
+                    <span>
+                        <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
+                    </span>
                             <span>
-                            <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
-                        </span>
+                        <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
+                    </span>
                             <button type="submit" class="btn modal-form__btn modal-call__btn">заказать звонок</button>
                             <input type="checkbox" class="form-control check help-form__check" name="agreement"
                                    id="form-call">
-                            <label for="form-call" class="agreement help-form__agreement">Я согласен условиями предоставления услуг
+                            <label for="form-call" class="agreement help-form__agreement">Я согласен условиями
+                                предоставления услуг
                                 и обработкой моих персональных данных
                                 при нажатии “Заказать звонок”</label>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="modal-call__exit">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
                     </svg>
                 </div>
             </div>
         </section>
-    
+
         <section class="modal-region">
             <div class="modal-region__wrapper">
-    <h2 class="title modal-region__title">Выбрать город</h2>
+                <h2 class="title modal-region__title">Выбрать город</h2>
                 <div class="modal-region__row">
                     <p class="modal-region__city">
                         Ваш город: <span class="js-select-city">Санкт-Петербург</span>?
@@ -1240,7 +1256,7 @@
                     <a href="#" class="btn modal-region__btn js-region-close">
                         да
                     </a>
-    
+
                 </div>
                 <div class="modal-region__row d-none">
                     <form action="post" method="post" class="form-search modal-region__form">
@@ -1254,7 +1270,7 @@
                             <path d="M19.5 19L15.15 14.65" stroke="white" stroke-width="2" stroke-linecap="round"
                                   stroke-linejoin="round"/>
                         </svg>
-    
+
                     </a>
                 </div>
                 <ul class="modal-region__list">
@@ -1295,17 +1311,19 @@
                     <li><a href="#" class="modal-region__link">Лондон</a></li>
                     <li><a href="#" class="modal-region__link">Рим</a></li>
                 </ul>
-    
+
                 <div class="modal-region__exit">
-    
+
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
-                        </svg>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
+                    </svg>
                 </div>
             </div>
         </section>
-    
+
         <section class="modal-one-click">
             <div class="modal-one-click__wrapper">
                 <h2 class="title modal-call__title">
@@ -1314,7 +1332,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="help__line"></div>
                 </div>
-                
+
                 <div class="modal-one-click__img">
                     <img src="img/modal.jpg" alt="">
                 </div>
@@ -1330,35 +1348,38 @@
                 <div class="modal-form">
                     <form action="post">
                         <div class="modal-form__wrapper">
-                       
-                            <span>
-                            <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
-                        </span>
-                       
+
+                        <span>
+                        <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
+                    </span>
+
                             <button type="submit" class="btn modal-form__btn modal-one-click__btn">подобрать</button>
                             <input type="checkbox" class="form-control check help-form__check" name="agreement"
                                    id="form-one-click">
-                            <label for="form-one-click" class="agreement help-form__agreement">Я согласен условиями предоставления услуг
+                            <label for="form-one-click" class="agreement help-form__agreement">Я согласен условиями
+                                предоставления услуг
                                 и обработкой моих персональных данных
                                 при нажатии “Заказать”</label>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="modal-one-click__exit">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
-                        </svg>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
+                    </svg>
                 </div>
             </div>
         </section>
-    
+
         <section class="modal-assortment">
             <div class="modal-assortment__wrapper">
                 <h2 class="title modal-call__title">
                     Подобрать <br>
-    оборудование
+                    оборудование
                 </h2>
                 <div class="d-flex justify-content-center">
                     <div class="help__line"></div>
@@ -1369,13 +1390,13 @@
                 <div class="modal-form">
                     <form action="post">
                         <div class="modal-form__wrapper">
-                        <span>
-                            <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
-                        </span>
+                    <span>
+                        <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
+                    </span>
                             <span>
-                            <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
-                        </span>
-                        <span>
+                        <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
+                    </span>
+
                             <div class="selectric">
                                 <div class="label">
                                     <span>Тип оборудования</span>
@@ -1396,29 +1417,33 @@
                                     </ul>
                                 </div>
                             </div>
-                        </span>
-                        <span>
-                            <textarea name="your-comment" id="your-comment" cols="30" rows="10" placeholder="Ваш комментарий"></textarea>
+
+                            <span>
+                        <textarea name="your-comment" id="your-comment" cols="30" rows="10"
+                                  placeholder="Ваш комментарий"></textarea>
                         </span>
                             <button type="submit" class="btn modal-form__btn modal-one-click__btn">подобрать</button>
                             <input type="checkbox" class="form-control check help-form__check" name="agreement"
-                                   id="form-one-click">
-                            <label for="form-one-click" class="agreement help-form__agreement">Я согласен условиями предоставления услуг
+                                   id="form-assortment">
+                            <label for="form-assortment" class="agreement help-form__agreement">Я согласен условиями
+                                предоставления услуг
                                 и обработкой моих персональных данных
                                 при нажатии “Подобрать”</label>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="modal-assortment__exit">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
-                        </svg>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
+                    </svg>
                 </div>
             </div>
         </section>
-    
+
         <section class="modal-job">
             <div class="modal-assortment__wrapper">
                 <h2 class="title modal-call__title">
@@ -1433,13 +1458,13 @@
                 <div class="modal-form">
                     <form action="post">
                         <div class="modal-form__wrapper">
-                        <span>
-                            <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
-                        </span>
+                    <span>
+                        <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше имя">
+                    </span>
                             <span>
-                            <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
-                        </span>
-                        <span>
+                        <input type="tel" class="form-control form__input modal-form__input" placeholder="Ваш телефон">
+                    </span>
+
                             <div class="selectric">
                                 <div class="label">
                                     <span>Вакансия</span>
@@ -1457,71 +1482,79 @@
                                     </ul>
                                 </div>
                             </div>
-                        </span>
-                        <span>
-                            <textarea name="your-about" id="your-about" cols="30" rows="10" placeholder="Расскажите о себе"></textarea>
-                        </span>
+
+                            <span>
+                        <textarea name="your-about" id="your-about" cols="30" rows="10"
+                                  placeholder="Расскажите о себе"></textarea>
+                    </span>
                             <button type="submit" class="btn modal-form__btn modal-one-click__btn">Отправить</button>
                             <input type="checkbox" class="form-control check help-form__check" name="agreement"
-                                   id="form-one-click">
-                            <label for="form-one-click" class="agreement help-form__agreement">Я согласен условиями предоставления услуг
+                                   id="form-job">
+                            <label for="form-job" class="agreement help-form__agreement">Я согласен условиями предоставления
+                                услуг
                                 и обработкой моих персональных данных
                                 при нажатии “Отправить”</label>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="modal-job__exit">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
-                        </svg>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
+                    </svg>
                 </div>
             </div>
         </section>
-    
+
         <section class="modal-subscribe">
             <div class="modal-one-click__wrapper">
                 <h2 class="title modal-call__title">
-                   Подписаться
+                    Подписаться
                 </h2>
                 <div class="d-flex justify-content-center">
                     <div class="help__line"></div>
                 </div>
-                
+
                 <div class="modal-call__text">
                     Заполните форму и мы будем присылать вам самые интересные новости
                 </div>
                 <div class="modal-form">
                     <form action="post">
                         <div class="modal-form__wrapper">
-                            <span>
-                                <input type="text" class="form-control form__input modal-form__input" placeholder="Ваше Имя">
-                            </span>
-                            <span>
-                            <input type="email" class="form-control form__input modal-form__input" placeholder="Ваш email">
+                        <span>
+                            <input type="text" class="form-control form__input modal-form__input"
+                                   placeholder="Ваше Имя">
                         </span>
-                       
+                            <span>
+                        <input type="email" class="form-control form__input modal-form__input" placeholder="Ваш email">
+                    </span>
+
                             <button type="submit" class="btn modal-form__btn modal-one-click__btn">подписаться</button>
                             <input type="checkbox" class="form-control check help-form__check" name="agreement"
-                                   id="form-one-click">
-                            <label for="form-one-click" class="agreement help-form__agreement">Я согласен условиями предоставления услуг
+                                   id="form-subscribe">
+                            <label for="form-subscribe" class="agreement help-form__agreement">Я согласен условиями
+                                предоставления услуг
                                 и обработкой моих персональных данных
                                 при нажатии “Подписаться”</label>
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="modal-subscribe__exit">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z" fill="black"/>
-                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z" fill="black"/>
-                        </svg>
+                        <path d="M27.785 1.85779L1.85785 27.785C1.20696 28.4359 1.20695 29.4911 1.85785 30.142C2.50874 30.7929 3.56401 30.7929 4.2149 30.142L30.1421 4.21477C30.793 3.56387 30.793 2.5086 30.1421 1.85771C29.4913 1.20682 28.4359 1.20689 27.785 1.85779Z"
+                              fill="black"/>
+                        <path d="M4.21498 1.85779L30.1421 27.785C30.793 28.4359 30.793 29.4911 30.1422 30.142C29.4913 30.7929 28.436 30.7929 27.7851 30.142L1.85786 4.21477C1.20697 3.56388 1.20696 2.50861 1.85785 1.85771C2.50875 1.20682 3.56409 1.20689 4.21498 1.85779Z"
+                              fill="black"/>
+                    </svg>
                 </div>
             </div>
         </section>
-    
+
     </aside>
     <!-- !MODAL -->
-    </body>
-    </html>
+</body>
+</html>

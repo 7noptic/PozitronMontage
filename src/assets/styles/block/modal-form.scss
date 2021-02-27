@@ -22,12 +22,13 @@
     }
   }
   &__wrapper{
+    & > .selectric{
+      margin-bottom: 20px;
+      border: none;
+    }
     & > span{
       width: 100%;
-      & > .selectric{
-margin-bottom: 20px;
-border: none;
-      }
+
       & > textarea{
         padding: 20px;
         width: 100%;
