@@ -178,6 +178,7 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 1,
         spaceBetween: 50,
         observer: true,
+        autoHeight: true,
         observeParents: true,
         allowSlidePrev: true,
         allowSlideNext: true,
@@ -218,6 +219,7 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 30,
         observer: true,
         observeParents: true,
+        autoHeight: true,
         navigation: {
             nextEl: '.object__next',
             prevEl: '.object__prev',

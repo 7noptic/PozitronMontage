@@ -1,5 +1,12 @@
 .object{
   padding: 40px 0;
+  &__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: 33%;
+  }
   &__title{
     padding-bottom: 50px;
   }
