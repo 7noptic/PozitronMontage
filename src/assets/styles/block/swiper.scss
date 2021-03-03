@@ -13,6 +13,17 @@
 
 .swiper-container-tags, .swiper-container-tags-2 {
   padding: 8px 0;
+  &::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    z-index: 1000;
+  }
 }
 
 .swiper-container-articles {
@@ -88,4 +99,30 @@
   .swiper-container-tags,.swiper-container-tags-2 {
     width: 85%;
   }
+  
+.swiper-pagination-bullets {
+  justify-content: center;
+  z-index: 25;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #000;
+  opacity: .2;
+  z-index: 25;
+  margin-right: 15px !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $blueGrad;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  opacity: 1;
+  z-index: 25;
+}
+
 }

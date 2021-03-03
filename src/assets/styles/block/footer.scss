@@ -45,6 +45,13 @@
     }
   }
 
+  &__link{
+    &:hover{
+      & > svg > path{
+        fill: $blue;
+      }
+    }
+  }
   &-form {
     &__text {
       font-weight: 700;
@@ -77,6 +84,7 @@
     max-width: 200px;
     font-size: 10px;
     line-height: 12px;
+    padding-bottom: 15px;
   }
 
   &__title {
@@ -309,9 +317,11 @@ justify-content: space-between;
   #footer-menu-copy {
     padding: 25px 0;
     display: flex;
-
+flex-wrap: wrap;
     & > a {
-
+display: block;
+padding-bottom: 15px;
+width: 100%;
       &:hover {
         color: $blue;
       }

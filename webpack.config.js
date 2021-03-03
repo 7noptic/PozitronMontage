@@ -137,7 +137,8 @@ module.exports = {
     },
     optimization: optimization(),
     devServer: {
-        port: 4300,
+        host: '127.0.0.1',
+        port: 3000,
         hot: isDev
     },
     devtool: isDev ? 'source-map' : '',
@@ -174,7 +175,7 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
+                exclude: /node_modules\/(?!(swiper|dom7)\/).*/,
                 loader:
                     {
                         loader: 'babel-loader',

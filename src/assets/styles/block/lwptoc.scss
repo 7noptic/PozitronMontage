@@ -23,9 +23,11 @@
 @media screen and (max-width: 991px) {
 
   .lwptoc {
+    width: 100%;
     &_item {
       &s {
-        padding-top: 40px;
+        width: 100%;
+        padding-bottom: 30px;
       }
 
       max-width: 100%;

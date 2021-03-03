@@ -151,7 +151,13 @@
     &__gray {
       padding: 50px;
     }
+    &-form {
+      &__agreement {
+        font-size: 12px;
+        line-height: 16px;
 
+      }
+    }
 
   }
 }

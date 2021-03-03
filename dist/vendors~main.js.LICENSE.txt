@@ -1,4 +1,15 @@
 /*!
+   * Sizzle CSS Selector Engine v2.3.5
+   * https://sizzlejs.com/
+   *
+   * Copyright JS Foundation and other contributors
+   * Released under the MIT license
+   * https://js.foundation/
+   *
+   * Date: 2020-03-14
+   */
+
+/*!
  *  @preserve
  * 
  * Readmore.js plugin
@@ -20,17 +31,6 @@
  * Licensed under the MIT license
  * 
  * Debounce function from davidwalsh.name/javascript-debounce-function
- */
-
-/*!
- * Sizzle CSS Selector Engine v2.3.5
- * https://sizzlejs.com/
- *
- * Copyright JS Foundation and other contributors
- * Released under the MIT license
- * https://js.foundation/
- *
- * Date: 2020-03-14
  */
 
 /*!
@@ -60,24 +60,24 @@
 /*! no static exports found */
 
 /*!*************************!*\
-  !*** ./src/readmore.js ***!
-  \*************************/
+        !*** ./src/readmore.js ***!
+        \*************************/
 
 /*!*******************************!*\
-  !*** multi ./src/readmore.js ***!
-  \*******************************/
+        !*** multi ./src/readmore.js ***!
+        \*******************************/
 
 /*!*******************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
-  \*******************************************************/
+        !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+        \*******************************************************/
 
 /*!************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
-  \************************************************************/
+        !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+        \************************************************************/
 
 /*!***************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
-  \***************************************************************/
+        !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+        \***************************************************************/
 
 /**
  * @license

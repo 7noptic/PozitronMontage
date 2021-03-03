@@ -13,6 +13,15 @@ window.addEventListener('DOMContentLoaded', () => {
     let headerMenu = document.querySelector('.header__nav'),
         html = document.querySelector('html'),
         body = document.querySelector('body');
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
+            console.log('asdfasdfasdfasdf')
+            var cardLeft = document.querySelector('.card-block__left');
+
+            if(cardLeft){
+                cardLeft.remove();
+            }
+
+        }
 
 
     /* HAMBURGER + FORM SEARCH OPEN HEADER */
@@ -78,7 +87,22 @@ window.addEventListener('DOMContentLoaded', () => {
             openCloseModal(e, modalRegion);
         }
         if (target.classList.contains('modal-region__link')) {
-
+            for(let i = 0; i < regionSelect.length; i++){
+                if (regionSelect[i] == target) {
+                    let citiValue = regionSelect[i].innerHTML;
+                    localStorage.setItem('city', citiValue)
+                    let testValue = localStorage.getItem('city')
+                    if (testValue == 'undifiend'){
+                        regionBtn.innerHTML = 'Москва';
+                    }
+                    else{
+                        regionBtn.innerHTML = testValue.innerHTML;
+                        regionBtn.innerHTML = testValue;
+                    }
+                    
+                }
+            }
+            /*
             regionSelect.forEach(item => {
                 if (item == target) {
                     let citiValue = item.innerHTML;
@@ -88,6 +112,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     regionBtn.innerHTML = testValue;
                 }
             });
+            */
             openCloseModal(e, modalRegion);
         } else if (target.classList.contains('js-region-close')) {
             let city = document.querySelector('.js-select-city');
@@ -103,11 +128,17 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             //html.classList.toggle('lock');
             modalBlock.classList.toggle('sidebar-bg');
+            for(let i =0; i < allModal.length; i++){
+                if (allModal[i].classList.toggle('active')) {
+                    allModal[i].classList.remove('active');
+                }
+            }
+            /*
             allModal.forEach(item => {
                 if (item.classList.toggle('active')) {
                     item.classList.remove('active');
                 }
-            });
+            });*/
         }
 
     });
@@ -283,7 +314,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let swiperAwardsBlock = new Swiper('.swiper-container-awards-block', {
         slidesPerView: 4,
-        spaceBetween: 100,
+        spaceBetween: 40,
         observer: true,
         observeParents: true,
         navigation: {
@@ -480,12 +511,19 @@ window.addEventListener('DOMContentLoaded', () => {
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
+                for(let i = 0; i < link.length; i++){
+                    if (link[i] == e.target) {
+                        hideTabs(link, tabs);
+                        showTabs(i, link, tabs);
+                    }
+                }
+                /*
                 link.forEach((item, i) => {
                     if (item == e.target) {
                         hideTabs(link, tabs);
                         showTabs(i, link, tabs);
                     }
-                });
+                });*/
             }
         });
     }
@@ -496,12 +534,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideTabs(link, content) {
+        for(let i = 0; i < link.length; i++){
+            link[i].classList.remove('active');
+        }
+        for(let i = 0; i < content.length; i++){
+            content[i].classList.remove('active');
+        }
+        /*
         link.forEach(item => {
             item.classList.remove('active');
         });
         content.forEach(item => {
             item.classList.remove('active');
-        });
+        });*/
     }
     /* RATING */
     let ratingParent = document.querySelector('.js-rating'),
@@ -513,9 +558,14 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const target = event.target;
             if (target && target.tagName == 'LI') {
+                for(let i = 0; i < ratingStar.length; i++){
+                    ratingStar[i].classList.remove('active')
+                }
+                /*
                 ratingStar.forEach((item, i) => {
                     item.classList.remove('active');
                 });
+                */
                 for (let i = 0; i => ratingStar.length; i++) {
                     if (ratingStar[i] == target) {
                         ratingStar[i].classList.add('active');
@@ -538,18 +588,35 @@ window.addEventListener('DOMContentLoaded', () => {
             const target = event.target;
             if (target && target.classList.contains('js-footer-title')) {
                 event.preventDefault();
+                for(let i = 0; i < footerLink.length; i++){
+                    if (footerLink[i] == target) {
+                        target.classList.toggle('active');
+                        footerList[i].classList.toggle('active');
+                    }
+                }
+                /*
                 footerLink.forEach((item, i) => {
                     if (item == target) {
                         target.classList.toggle('active');
                         footerList[i].classList.toggle('active');
                     }
                 });
+                */
             }
 
         }, { passive: false });
     }
 
+    /* footer */
+    let filterBtn = document.querySelector('.js-filter-btn'),
+        filterContent = document.querySelector('.js-filter-content');
 
+        if(filterBtn){
+            filterBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+               filterContent.classList.toggle('active');
+            });
+        }
     /* SHOW ALL BUTTON */
 
     let getSiblings = function (e, byClass) {
@@ -581,6 +648,34 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     let showAllBtn = document.querySelectorAll('.js-show-all')
+    for(let i = 0; i < showAllBtn.length; i++){
+        showAllBtn[i].addEventListener('click', function (e) {
+            let arShowItems = getSiblings(this, 'mask').siblingsByClass
+
+            if (this.classList.contains('open')) {
+                for(let i = 0; i < arShowItems.length;i++){
+                    arShowItems[i].classList.add('hidden')
+                }
+                /*
+                arShowItems.forEach(el => {
+                    el.classList.add('hidden')
+                })*/
+                this.innerHTML = "Показать все"
+                this.classList.remove('open')
+            } else {
+                for(let i = 0; i < arShowItems.length;i++){
+                    arShowItems[i].classList.remove('hidden')
+                }
+                /*
+                arShowItems.forEach(el => {
+                    el.classList.remove('hidden')
+                })*/
+                this.innerHTML = "Скрыть последние"
+                this.classList.add('open')
+            }
+        })
+    }
+    /*
     showAllBtn.forEach(elem => {
         elem.addEventListener('click', function (e) {
             let arShowItems = getSiblings(this, 'mask').siblingsByClass
@@ -599,7 +694,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 this.classList.add('open')
             }
         })
-    })
+    })*/
 
 
     /* ASIDE ACCORDION */
@@ -688,7 +783,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     findVideos();
-    /* Reviews Stars */
+    /* Reviews Stars 
 
     let starsContainer = document.querySelector('.card__rate');
     let str = '';
@@ -751,7 +846,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         })
     }
-    handleEvenets()
+    handleEvenets()*/
 
 
     /* Custom Selects*/
@@ -760,18 +855,31 @@ window.addEventListener('DOMContentLoaded', () => {
     let options = document.querySelectorAll('.hidden ul li');
     let formDelivery = '';
 
+    for (let i = 0; i < selectrics.length; i++){
+        selectrics[i].addEventListener('click', function () {
+            show(this)
+        })
+    }
+    for (let i = 0; i < options.length; i++){
+        options[i].addEventListener('click', function () {
+            select(this)
+            formDelivery = this.innerHTML;
+        })
+    }
+    /*
     selectrics.forEach(el => {
         el.addEventListener('click', function () {
             show(this)
         })
     })
+    
     options.forEach(el => {
         el.addEventListener('click', function () {
             select(this)
             formDelivery = this.innerHTML;
         })
     })
-
+*/
     function show(context) {
         let selectbox = context.querySelector(".selectric-options");
         // visible

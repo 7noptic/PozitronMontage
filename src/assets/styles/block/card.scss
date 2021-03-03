@@ -1,4 +1,7 @@
-
+div.label-img{
+  display: block;
+  width: 100%;
+}
 .card {
   &__item {
     margin-bottom: 40px;
@@ -49,10 +52,21 @@
 
   &__name {
     display: block;
-    padding: 20px 0;
+    padding: 20px 0 0;
+    margin-bottom: 20px;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
+    overflow: hidden;
+      text-overflow: ellipsis;
+      display: -moz-box;
+      -moz-box-orient: vertical;
+      display: -webkit-box;
+      -webkit-line-clamp:2;
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      box-orient: vertical;
+      height: 56px;
 
     &:hover {
       color: $blue;
@@ -65,6 +79,7 @@
     line-height: 24px;
     letter-spacing: -0.103636px;
     padding-bottom: 32px;
+    
     width: 80%;
 & > p{
   display: inline-block;
@@ -240,6 +255,7 @@
           flex-direction: column;
           justify-content: space-between;
           height: 560px;
+          
         }
 
         &-ar {
@@ -409,7 +425,7 @@
 
         > div {
           margin-right: 18px;
-
+          width: auto;
           &:nth-last-child(1) {
             margin-right: 0;
           }
