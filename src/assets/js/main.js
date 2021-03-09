@@ -493,11 +493,17 @@ window.addEventListener('DOMContentLoaded', () => {
         hitParents = document.querySelector('.hit'),
         jobLink = document.querySelectorAll('.job__header'),
         jobTabs = document.querySelectorAll('.job__bottom'),
-        jobParents = document.querySelector('.job');
+        jobParents = document.querySelector('.job'),
+        bannerParent = document.querySelector('.banner'),
+        bannerLink = document.querySelectorAll('.banner__adv'),
+        bannerContent = document.querySelectorAll('.banner__content');
 
-    if (hitParents) {
-        showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
-    }
+        if (hitParents) {
+            showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
+        }
+        if (bannerParent) {
+            showHideTabs(0, bannerLink, bannerContent, bannerParent, 'banner__adv');
+        }
     if (articleParents) {
         showHideTabs(0, articleLink, articleTabs, articleParents, 'js-article-link');
     }

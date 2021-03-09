@@ -1,5 +1,11 @@
 .banner {
   padding: 60px 0;
+  &__content{
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
 
   &__adv {
     display: block;
@@ -40,6 +46,7 @@
   }
   &__text{
     padding-left: calc(10% + 50px);
+    padding-top: 60px;
   }
   &__img{
     padding: 60px;
@@ -142,6 +149,7 @@
     }
     &__text{
       padding-left: 0;
+      padding-top: 40px;
     }
     &__img{
       padding: 40px;
@@ -181,6 +189,7 @@
     }
     &__text{
       padding-left: 0;
+      padding-top: 25px;
     }
     &__img{
       padding: 25px;
