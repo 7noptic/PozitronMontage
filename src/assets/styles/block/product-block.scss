@@ -90,6 +90,12 @@
     font-weight: 400;
   }
 }
+.js-product-tab{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
 @media screen and (max-width: 1399px){
   .product-block {
     padding: 35px 0;

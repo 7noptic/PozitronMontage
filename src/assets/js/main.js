@@ -15,10 +15,23 @@ window.addEventListener('DOMContentLoaded', () => {
         body = document.querySelector('body');
         if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
             console.log('asdfasdfasdfasdf')
-            var cardLeft = document.querySelector('.card-block__left');
+            var cardLeft = document.querySelector('.card-block__left'),
+                cardBlock = document.querySelector('.card-block');
+            let cardLeftNew = document.createElement('div');
+
+            
 
             if(cardLeft){
+                let cardImg = document.querySelector('.card__img');
                 cardLeft.remove();
+                console.log(cardImg);
+                cardBlock.insertAdjacentHTML('afterbegin', `
+                <div class="card-block__left col col-lg-7">
+                <div class="d-flex justify-content-center align-items-center">
+                ${cardImg.innerHTML}
+                </div>
+                </div>
+                `);
             }
 
         }
@@ -496,7 +509,10 @@ window.addEventListener('DOMContentLoaded', () => {
         jobParents = document.querySelector('.job'),
         bannerParent = document.querySelector('.banner'),
         bannerLink = document.querySelectorAll('.banner__adv'),
-        bannerContent = document.querySelectorAll('.banner__content');
+        bannerContent = document.querySelectorAll('.banner__content'),
+        productParent = document.querySelector('.product-block'),
+        productLink = document.querySelectorAll('.js-product-link'),
+        productTab = document.querySelectorAll('.js-product-tab');
 
         if (hitParents) {
             showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
@@ -509,6 +525,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     if (jobParents) {
         showHideTabs(0, jobLink, jobTabs, jobParents, 'job__header');
+    }
+    if (productParent) {
+        showHideTabs(0, productLink, productTab, productParent, 'js-product-link');
     }
 
     function showHideTabs(i = 0, link, tabs, parent, classContains) {
