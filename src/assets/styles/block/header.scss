@@ -157,47 +157,45 @@
     }
 
     &__list {
-      -moz-column-width: 100px;
-      -webkit-column-width: 100px;
-      column-width: 100px;
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-      columns: 100px 2;
-      -webkit-columns: 100px 2;
-      -moz-columns: 100px 2;
+      display: flex;
+      flex-wrap: wrap;
       padding: 0 30px 0;
 
-      & > li > a {
+      & > li {
+        width: 50%;
 
-        display: block;
-        width: 90%;
-        padding: 23px 0;
-        font-size: 14px;
-        line-height: 17px;
-        border-top: 1px solid rgba(0, 0, 0, 0.5);
-        position: relative;
-       // -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
-       // -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
-       // box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
-        transition: $transition4;
-        &::after{
-          position: absolute;
-          content: '';
+        > a {
+
           display: block;
-          width: 100%;
-          height: 1px;
-          bottom: -1px;
-          left: 0;
-          background-color: #000;
-          opacity:1;
-        }
+          width: 90%;
+          padding: 23px 0;
+          font-size: 14px;
+          line-height: 17px;
+          border-top: 1px solid rgba(0, 0, 0, 0.5);
+          position: relative;
+          // -webkit-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
+          // -moz-box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
+          // box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 1);
+          transition: $transition4;
 
-        &:last-of-type {
-        }
+          &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            background-color: #000;
+            opacity: 1;
+          }
 
-        &:hover {
-          color: $blue;
+          &:last-of-type {
+          }
+
+          &:hover {
+            color: $blue;
+          }
 
         }
       }
@@ -527,6 +525,7 @@
         display: block;
         padding: 30px !important;
         columns: 100px 1;
+
         & > li > a {
           border-top: none;
           display: block;
@@ -538,11 +537,12 @@
           line-height: 18px;
           font-weight: 500;
           text-transform: uppercase;
-          &:before,&::after{
+
+          &:before, &::after {
             content: '';
             display: none;
           }
-    
+
           &:hover {
             color: black;
           }
@@ -744,14 +744,16 @@
       }
 
       &__list {
-        columns: 100px 1;
         padding: 0 0;
 
-        & > li > a {
+        & > li {
           width: 100%;
-          padding: 18px 0;
-          font-size: 12px;
-          line-height: 15px;
+          > a {
+            width: 100%;
+            padding: 18px 0;
+            font-size: 12px;
+            line-height: 15px;
+          }
         }
       }
     }

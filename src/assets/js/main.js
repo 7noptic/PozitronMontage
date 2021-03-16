@@ -514,9 +514,9 @@ window.addEventListener('DOMContentLoaded', () => {
         productLink = document.querySelectorAll('.js-product-link'),
         productTab = document.querySelectorAll('.js-product-tab');
 
-        if (hitParents) {
-            showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
-        }
+    if (hitParents && hitParents.classList.contains('hit-catalog') == false) {
+        showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
+    }
         if (bannerParent) {
             showHideTabs(0, bannerLink, bannerContent, bannerParent, 'banner__adv');
         }
