@@ -1,0 +1,35 @@
+.quantity .wac-quantity{
+    display: flex;
+}
+.wac-qty-button {
+    display: flex!important;
+    border-radius: 0 !important;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 5px;
+    background-color: none!important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0;
+    position: relative;
+    width: 15px;
+    align-items: center;
+}
+.wac-btn-sub{
+    &::before{
+        content: url('../img/basketarr.svg');
+        position: relative;
+        display: inline;
+    }
+}
+.wac-btn-inc{
+    &::before{
+        content: url('../img/basketarr.svg');
+        position: relative;
+        display: inline;
+        transform: rotate(180deg);
+    }
+}
+.product-remove{
+    display: flex!important;
+}

@@ -59,7 +59,7 @@
             font-size: 24px;
             line-height: 1.2em;
             font-weight: normal;
-            display: flex;
+            display: flex!important;
             align-items: center;
         }
         &__count {
@@ -92,7 +92,7 @@
             }
         }
         &__cost {
-            display: flex;
+            display: flex!important;
             flex-direction: column;
             justify-content: center;
         }
