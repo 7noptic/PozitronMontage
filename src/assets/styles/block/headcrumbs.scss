@@ -28,3 +28,36 @@ flex-wrap: wrap;
     }
   }
 }
+.kama_breadcrumbs{
+  & > div{
+    padding-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    span{
+      display: inline-block;
+    font-size: 11px;
+    opacity: 1;
+    transition: $transition4;
+    padding-right: 11px;
+    position: relative;
+    &.kb_sep{
+      padding-right: 0;
+      &::after{
+        content: url('../img/hc.svg');
+        display: inline-block;
+        position: absolute;
+        top: -1px;
+  
+        right: 8px;
+      }
+      img{
+        display: none;
+      }
+    }
+    &.kb_title{
+      opacity: .5;
+    }
+    }
+  }
+}
