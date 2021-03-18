@@ -1,11 +1,10 @@
 'use script';
-import Swiper, { Navigation, Pagination } from 'swiper';
-import Readmore from "readmore-js";
-import GLightbox from 'glightbox';
-import $ from 'jquery';
-import { head, startCase } from 'lodash';
+import Swiper, {Navigation, Pagination, Autoplay, Thumbs} from 'swiper';
 
-Swiper.use([Navigation, Pagination]);
+import GLightbox from 'glightbox';
+
+
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,28 +12,27 @@ window.addEventListener('DOMContentLoaded', () => {
     let headerMenu = document.querySelector('.header__nav'),
         html = document.querySelector('html'),
         body = document.querySelector('body');
-        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
-            console.log('asdfasdfasdfasdf')
-            var cardLeft = document.querySelector('.card-block__left'),
-                cardBlock = document.querySelector('.card-block');
-            let cardLeftNew = document.createElement('div');
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+        console.log('asdfasdfasdfasdf')
+        var cardLeft = document.querySelector('.card-block__left'),
+            cardBlock = document.querySelector('.card-block');
+        let cardLeftNew = document.createElement('div');
 
-            
 
-            if(cardLeft){
-                let cardImg = document.querySelector('.card__img');
-                cardLeft.remove();
-                console.log(cardImg);
-                cardBlock.insertAdjacentHTML('afterbegin', `
+        if (cardLeft) {
+            let cardImg = document.querySelector('.card__img');
+            cardLeft.remove();
+            console.log(cardImg);
+            cardBlock.insertAdjacentHTML('afterbegin', `
                 <div class="card-block__left col col-lg-7">
                 <div class="d-flex justify-content-center align-items-center">
                 ${cardImg.innerHTML}
                 </div>
                 </div>
                 `);
-            }
-
         }
+
+    }
 
 
     /* HAMBURGER + FORM SEARCH OPEN HEADER */
@@ -42,7 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
         searchForm = header.querySelector('.header__search > form'),
         hamburgerBtn = header.querySelector('.js-burger'),
         hamburgerMenu = header.querySelector('.hamburger-menu');
-
 
 
     header.addEventListener('click', (e) => {
@@ -70,11 +67,11 @@ window.addEventListener('DOMContentLoaded', () => {
         regionSelect = document.querySelectorAll('.modal-region__link'),
         regionBtn = document.querySelector('.js-region-city');
 
-    if(localStorage.getItem('city') != null){
+    if (localStorage.getItem('city') != null) {
         console.log(localStorage.getItem('city'));
-        console.log(typeof(localStorage.getItem('city')));
+        console.log(typeof (localStorage.getItem('city')));
         regionBtn.innerHTML = localStorage.getItem('city');
-    } else{
+    } else {
         regionBtn.innerHTML = 'Москва';
     }
     document.addEventListener('click', e => {
@@ -100,19 +97,18 @@ window.addEventListener('DOMContentLoaded', () => {
             openCloseModal(e, modalRegion);
         }
         if (target.classList.contains('modal-region__link')) {
-            for(let i = 0; i < regionSelect.length; i++){
+            for (let i = 0; i < regionSelect.length; i++) {
                 if (regionSelect[i] == target) {
                     let citiValue = regionSelect[i].innerHTML;
                     localStorage.setItem('city', citiValue)
                     let testValue = localStorage.getItem('city')
-                    if (testValue == 'undifiend'){
+                    if (testValue == 'undifiend') {
                         regionBtn.innerHTML = 'Москва';
-                    }
-                    else{
+                    } else {
                         regionBtn.innerHTML = testValue.innerHTML;
                         regionBtn.innerHTML = testValue;
                     }
-                    
+
                 }
             }
             /*
@@ -141,7 +137,7 @@ window.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             //html.classList.toggle('lock');
             modalBlock.classList.toggle('sidebar-bg');
-            for(let i =0; i < allModal.length; i++){
+            for (let i = 0; i < allModal.length; i++) {
                 if (allModal[i].classList.toggle('active')) {
                     allModal[i].classList.remove('active');
                 }
@@ -351,42 +347,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    const $gallery = $('.swiper-container-card-gallery');
-    const $thumbs = $('.swiper-container-card-mini');
-    const slideNumber = $gallery.find('.swiper-slide').length / 3;
-    const slidesPerView = 3;
-    let targetIndex;
-
-    const activeSlideClass = 'active';
-    let $thumbsActiveSlide;
-    let $galleryActiveSlide;
-
-
-    let swiperGallery = new Swiper('.swiper-container-card-gallery', {
+    let galleryThumbs = new Swiper('.swiper-container-card-mini', {
+        spaceBetween: 30,
+        autoplay: true,
+        slidesPerView: 3,
         direction: 'vertical',
-        //loop: true,
-        //loopAdditionalSlides: 0,
-        initialSlide: slideNumber,
-        speed: 700,
-        simulateTouch: false,
-        spaceBetween: 20,
-
-    });
-
-    let swiperThumbs = new Swiper('.swiper-container-card-mini', {
-        direction: 'vertical',
-        //loop: true,
-        //loopAdditionalSlides: 0,
-        slidesPerView: slidesPerView,
-        initialSlide: slideNumber,
-        centeredSlides: true,
-        slideToClickedSlide: true,
-        speed: 500,
-        spaceBetween: 20,
-        navigation: {
-            nextEl: '.card-gallery__mini-ar-b',
-            prevEl: '.card-gallery__mini-ar-t',
-        },
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
         breakpoints: {
             0: {
                 slidesPerView: 1,
@@ -397,104 +365,23 @@ window.addEventListener('DOMContentLoaded', () => {
             1199: {
                 slidesPerView: 3,
             },
-
+            navigation: {
+                nextEl: '.card-gallery__mini-ar-b',
+                prevEl: '.card-gallery__mini-ar-t',
+            },
         }
     });
-
-    //add custom active class for smooth animation
-    $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
-    $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
-    $thumbsActiveSlide.addClass(activeSlideClass);
-    $galleryActiveSlide.addClass(activeSlideClass);
-    //---------------------------------------------
-
-
-    swiperThumbs.on("slideChangeTransitionStart", function () {
-        //add custom active class for smooth animation
-        $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
-        $thumbsActiveSlide.siblings().removeClass(activeSlideClass);
-        //---------------------------------------------
-
-        targetIndex = Number(swiperThumbs.realIndex);
-        swiperThumbs.detachEvents();
-        swiperGallery.slideTo(targetIndex + 1, 700, true);
-    });
-
-    // swiperThumbs.on("slideChangeTransitionEnd", function () {
-    //   swiperThumbs.attachEvents();
-    // });
-
-    swiperGallery.on("slideChangeTransitionStart", function () {
-        //add custom active class for smooth animation
-        $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
-        $galleryActiveSlide.siblings().removeClass(activeSlideClass);
-        //---------------------------------------------
-    });
-
-    swiperGallery.on("slideChangeTransitionEnd", function () {
-        if (targetIndex < slideNumber) {
-            targetIndex += slideNumber;
-            teleportTo(targetIndex);
-        } else if (targetIndex >= slideNumber * 2) {
-            targetIndex -= slideNumber;
-            teleportTo(targetIndex);
-        } else {
-            //add custom active class for smooth animation
-            $thumbsActiveSlide.addClass(activeSlideClass);
-            $galleryActiveSlide.addClass(activeSlideClass);
-            //---------------------------------------------
+    let galleryTop = new Swiper('.swiper-container-card-gallery', {
+        spaceBetween: 100,
+        autoplay: true,
+        navigation: {
+            nextEl: '.card-gallery__mini-ar-b',
+            prevEl: '.card-gallery__mini-ar-t',
+        },
+        thumbs: {
+            swiper: galleryThumbs
         }
-        swiperThumbs.attachEvents();
     });
-
-    function teleportTo(slideIndex) {
-        swiperThumbs.slideTo(slideIndex + slidesPerView, 0, false);
-        swiperGallery.slideTo(slideIndex + 1, 0, false);
-
-        //add custom active class for smooth animation
-        $thumbsActiveSlide = $(swiperThumbs.slides).filter('.swiper-slide-active');
-        $galleryActiveSlide = $(swiperGallery.slides).filter('.swiper-slide-active');
-        $thumbsActiveSlide.addClass(activeSlideClass);
-        $galleryActiveSlide.addClass(activeSlideClass);
-        //---------------------------------------------
-    }
-
-    //If u have images with lazy add this after swipers init
-    function fixLazy() {
-        let gallerylastIndex = slideNumber * 2;
-        let thumbslastIndex = slideNumber * 2 + slidesPerView - 1;
-        let $lastGallerySlide = $(swiperGallery.slides[gallerylastIndex]).find('.swiper-lazy');
-        let $lastThumbsSlide = $(swiperThumbs.slides[thumbslastIndex]).find('.swiper-lazy');
-
-        removeLazySlide($lastGallerySlide);
-        removeLazySlide($lastThumbsSlide);
-
-        let counter;
-
-        if ((slidesPerView - 1) % 2 !== 0) {
-            counter = Math.floor((slidesPerView - 1) / 2) + 1;
-        } else {
-            counter = (slidesPerView - 1) / 2;
-        }
-
-        for (let i = 0; i < counter; i++) {
-
-            let $prevSlide = $(swiperThumbs.slides[thumbslastIndex - (i + 1)]).find('.swiper-lazy');
-            let $nextSlide = $(swiperThumbs.slides[thumbslastIndex + (i + 1)]).find('.swiper-lazy');
-
-            removeLazySlide($prevSlide);
-            removeLazySlide($nextSlide);
-        }
-    }
-
-    function removeLazySlide($slide) {
-        let data = $slide.data('background');
-        $slide.attr('style', `background-image: url('${data}')`);
-        $slide.removeAttr('data-background');
-        $slide.addClass('swiper-lazy-loaded');
-        $slide.empty();
-    }
-
 
 
     /* TABS */
@@ -517,16 +404,16 @@ window.addEventListener('DOMContentLoaded', () => {
     if (hitParents && hitParents.classList.contains('hit-catalog') == false) {
         showHideTabs(0, hitLink, hitTabs, hitParents, 'js-hit-link');
     }
-        if (bannerParent) {
-            showHideTabs(0, bannerLink, bannerContent, bannerParent, 'banner__adv');
-        }
-    if (articleParents) {
+    if (bannerParent && bannerLink.length != 0) {
+        showHideTabs(0, bannerLink, bannerContent, bannerParent, 'banner__adv');
+    }
+    if (articleParents && articleLink.length != 0) {
         showHideTabs(0, articleLink, articleTabs, articleParents, 'js-article-link');
     }
-    if (jobParents) {
+    if (jobParents && jobLink.length != 0) {
         showHideTabs(0, jobLink, jobTabs, jobParents, 'job__header');
     }
-    if (productParent) {
+    if (productParent && productLink.length != 0) {
         showHideTabs(0, productLink, productTab, productParent, 'js-product-link');
     }
 
@@ -536,7 +423,7 @@ window.addEventListener('DOMContentLoaded', () => {
         parent.addEventListener('click', (e) => {
             if (e.target && e.target.classList.contains(classContains)) {
                 e.preventDefault();
-                for(let i = 0; i < link.length; i++){
+                for (let i = 0; i < link.length; i++) {
                     if (link[i] == e.target) {
                         hideTabs(link, tabs);
                         showTabs(i, link, tabs);
@@ -559,20 +446,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function hideTabs(link, content) {
-        for(let i = 0; i < link.length; i++){
+        for (let i = 0; i < link.length; i++) {
             link[i].classList.remove('active');
         }
-        for(let i = 0; i < content.length; i++){
+        for (let i = 0; i < content.length; i++) {
             content[i].classList.remove('active');
         }
-        /*
-        link.forEach(item => {
-            item.classList.remove('active');
-        });
-        content.forEach(item => {
-            item.classList.remove('active');
-        });*/
+
     }
+
     /* RATING */
     let ratingParent = document.querySelector('.js-rating'),
         ratingInput = document.querySelector('#js-rating'),
@@ -583,14 +465,10 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             const target = event.target;
             if (target && target.tagName == 'LI') {
-                for(let i = 0; i < ratingStar.length; i++){
+                for (let i = 0; i < ratingStar.length; i++) {
                     ratingStar[i].classList.remove('active')
                 }
-                /*
-                ratingStar.forEach((item, i) => {
-                    item.classList.remove('active');
-                });
-                */
+
                 for (let i = 0; i => ratingStar.length; i++) {
                     if (ratingStar[i] == target) {
                         ratingStar[i].classList.add('active');
@@ -605,44 +483,64 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
     /* footer link */
-    const footerMenuParent = document.querySelector('.footer'),
+    let footerMenuParent = document.querySelector('.footer'),
         footerLink = document.querySelectorAll('.js-footer-title'),
-        footerList = document.querySelectorAll('.js-footer-menu');
+        footerList = document.querySelectorAll('.js-footer-menu'),
+        hitFilterParent = document.querySelector('.hit__filter'),
+        hitFilterLink = document.querySelectorAll('.js-accordion-btn'),
+        hitFilterList = document.querySelectorAll('.hit__filter-checkboxes');
     if (footerMenuParent) {
         footerMenuParent.addEventListener('click', (event) => {
             const target = event.target;
             if (target && target.classList.contains('js-footer-title')) {
                 event.preventDefault();
-                for(let i = 0; i < footerLink.length; i++){
+                for (let i = 0; i < footerLink.length; i++) {
                     if (footerLink[i] == target) {
                         target.classList.toggle('active');
                         footerList[i].classList.toggle('active');
                     }
                 }
-                /*
-                footerLink.forEach((item, i) => {
-                    if (item == target) {
-                        target.classList.toggle('active');
-                        footerList[i].classList.toggle('active');
-                    }
-                });
-                */
+
             }
 
-        }, { passive: false });
+        }, {passive: false});
     }
 
-    /* footer */
+    if (hitFilterParent) {
+        hitFilterParent.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target && target.classList.contains('js-accordion-btn')) {
+                event.preventDefault();
+                for (let i = 0; i < hitFilterLink.length; i++) {
+                    if (hitFilterLink[i] == target) {
+                        target.classList.toggle('active');
+                        hitFilterList[i].classList.toggle('open');
+                    }
+                }
+
+            }
+
+        }, {passive: false});
+    }
+    /*
+    if (this.classList.contains('active')) {
+        accordionContent.classList.remove('open');
+        this.classList.remove('active');
+    } else {
+        accordionContent.classList.add('open');
+        this.classList.add('active');
+    }
+    /* footer
     let filterBtn = document.querySelector('.js-filter-btn'),
         filterContent = document.querySelector('.js-filter-content');
 
-        if(filterBtn){
-            filterBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-               filterContent.classList.toggle('active');
-            });
-        }
-    /* SHOW ALL BUTTON */
+    if (filterBtn) {
+        filterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterContent.classList.toggle('active');
+        });
+    }
+    /* SHOW ALL BUTTON*/
 
     let getSiblings = function (e, byClass) {
 
@@ -694,13 +592,14 @@ window.addEventListener('DOMContentLoaded', () => {
                 /*
                 arShowItems.forEach(el => {
                     el.classList.remove('hidden')
-                })*/
+                })
+                 */
                 this.innerHTML = "Скрыть последние"
                 this.classList.add('open')
             }
         })
     }
-    /*
+/*
     showAllBtn.forEach(elem => {
         elem.addEventListener('click', function (e) {
             let arShowItems = getSiblings(this, 'mask').siblingsByClass
@@ -719,10 +618,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 this.classList.add('open')
             }
         })
-    })*/
+    })
 
 
-    /* ASIDE ACCORDION */
+    /* ASIDE ACCORDION
 
     let accordionBtn = document.querySelectorAll('.js-accordion-btn');
 
@@ -880,17 +779,18 @@ window.addEventListener('DOMContentLoaded', () => {
     let options = document.querySelectorAll('.hidden ul li');
     let formDelivery = '';
 
-    for (let i = 0; i < selectrics.length; i++){
+    for (let i = 0; i < selectrics.length; i++) {
         selectrics[i].addEventListener('click', function () {
             show(this)
         })
     }
-    for (let i = 0; i < options.length; i++){
+    for (let i = 0; i < options.length; i++) {
         options[i].addEventListener('click', function () {
             select(this)
             formDelivery = this.innerHTML;
         })
     }
+
     /*
     selectrics.forEach(el => {
         el.addEventListener('click', function () {
@@ -1010,8 +910,8 @@ window.addEventListener('DOMContentLoaded', () => {
                         //Сумма товаров
                         totalPrice[curId] = localPrice;
                         basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
-                        
-                        if(sumSalaries(totalDiscount)) {
+
+                        if (sumSalaries(totalDiscount)) {
                             basketSumOld.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDiscount) * -1) + ' ₽';
                         } else {
                             basketSumOld.innerHTML = '';
@@ -1036,7 +936,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 //Сумма товаров
                 basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
-                if(sumSalaries(totalDiscount)) {
+                if (sumSalaries(totalDiscount)) {
                     basketSumOld.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDiscount) * -1) + ' ₽';
                 } else {
                     basketSumOld.innerHTML = '';
@@ -1058,9 +958,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
 
-
         // ФОРМА - ТЕЛЕФОН
-        let phoneField =  document.querySelector('[name="phone"]');
+        let phoneField = document.querySelector('[name="phone"]');
         let phoneResponse = document.querySelector('.js-respose-phone')
         let phoneValid = false;
 
@@ -1075,9 +974,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
         phoneField.addEventListener("keyup", function () {
             var input = phoneField,
-            atr = "+7 (___) ___-__-__",
-            pat = new RegExp("_"),
-            target = event.target;
+                atr = "+7 (___) ___-__-__",
+                pat = new RegExp("_"),
+                target = event.target;
 
             if (!pat.test(input.value)) {
                 phoneResponse.innerHTML = 'Телефон введен верно'
@@ -1136,6 +1035,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     : (i = matrix.indexOf("_"));
                 setCursorPosition(i, this);
             }
+
             var input = phoneField;
             input.addEventListener("input", mask, false);
             var input = phoneField,
@@ -1164,29 +1064,29 @@ window.addEventListener('DOMContentLoaded', () => {
 
         // ФОРМА ОФОРМЛЕНИЯ ЗАКАЗА
         let formElem = document.getElementById('basket')
-        let emailField =  document.querySelector('[name="email"]');
+        let emailField = document.querySelector('[name="email"]');
         let emailResponse = document.querySelector('.js-respose-email')
         let emailValid = false;
 
-        emailField.addEventListener('keyup', function(){
+        emailField.addEventListener('keyup', function () {
             let email = this.value;
             if (validateEmail(email)) {
                 emailResponse.innerHTML = "E-mail введен верно";
                 emailResponse.style.color = '#009800';
-                emailValid  = true;
+                emailValid = true;
             }
         })
-        
-        emailField.addEventListener('blur', function(){
+
+        emailField.addEventListener('blur', function () {
             let email = this.value;
             if (validateEmail(email)) {
                 emailResponse.innerHTML = "E-mail введен верно";
                 emailResponse.style.color = '#009800';
-                emailValid  = true;
+                emailValid = true;
             } else {
                 emailResponse.innerHTML = "Введите корректный E-mail";
                 emailResponse.style.color = 'red';
-                emailValid  = false;
+                emailValid = false;
             }
         })
 
@@ -1199,11 +1099,11 @@ window.addEventListener('DOMContentLoaded', () => {
             basketItems.forEach(element => {
                 formBasket.push(element.dataset.basketId)
             });
-           
+
             formData.append('delivery', formDelivery)
             formData.append('basket-items', formBasket)
 
-            if(phoneValid && emailValid) {
+            if (phoneValid && emailValid) {
                 console.log(...formData)
             }
 

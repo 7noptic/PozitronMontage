@@ -199,7 +199,9 @@ div.label-img{
           padding: 12px;
           border: 1px solid #C4C4C4;
           font-size: 14px;
-
+          p {
+            margin-bottom: 0;
+          }
           &:nth-child(1) {
             font-weight: 600;
           }
@@ -311,7 +313,7 @@ div.label-img{
               height: auto;
             }
 
-            &.active {
+            &-thumb-active {
               border-color: #000;
             }
           }

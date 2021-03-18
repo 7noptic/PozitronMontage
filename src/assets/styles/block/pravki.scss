@@ -1,4 +1,4 @@
-.quantity .wac-quantity{
+.wac-quantity{
     display: flex;
 }
 .wac-qty-button {
@@ -7,7 +7,7 @@
     padding-left: 7px;
     padding-right: 7px;
     padding-bottom: 5px;
-    background-color: none!important;
+    background-color: transparent!important;
     text-decoration: none;
     font-weight: bold;
     font-size: 0;
@@ -20,6 +20,7 @@
         content: url('../img/basketarr.svg');
         position: relative;
         display: inline;
+        margin-left: -4px;
     }
 }
 .wac-btn-inc{
@@ -27,9 +28,57 @@
         content: url('../img/basketarr.svg');
         position: relative;
         display: inline;
+        margin-left: -4px;
         transform: rotate(180deg);
     }
 }
 .product-remove{
     display: flex!important;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  .page-numbers{
+      padding: 0;
+      transition: 0.3s;
+      font-size: 18px;
+      font-weight: normal;
+      min-width: 20px;
+      height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      &.current{
+          font-weight: 600;
+          font-size: 20px;
+      }
+  }
 }
