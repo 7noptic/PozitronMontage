@@ -256,7 +256,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
     let swiperObject = new Swiper('.swiper-container-object', {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 35,
         observer: true,
         observeParents: true,
         autoHeight: true,
@@ -543,18 +543,12 @@ window.addEventListener('DOMContentLoaded', () => {
     /* SHOW ALL BUTTON*/
 
     let getSiblings = function (e, byClass) {
-
-        // for collecting siblings
         let siblings = [];
         let siblingsByClass = [];
-        // if no parent, return no sibling
         if (!e.parentNode) {
             return siblings;
         }
-        // first child of the parent node
         let sibling = e.parentNode.firstChild;
-
-        // collecting siblings
         while (sibling) {
             if (sibling.nodeType === 1 && sibling !== e) {
                 if (sibling.classList.contains(byClass)) {
@@ -571,88 +565,80 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     let showAllBtn = document.querySelectorAll('.js-show-all')
-    for(let i = 0; i < showAllBtn.length; i++){
+    for (let i = 0; i < showAllBtn.length; i++) {
         showAllBtn[i].addEventListener('click', function (e) {
             let arShowItems = getSiblings(this, 'mask').siblingsByClass
 
             if (this.classList.contains('open')) {
-                for(let i = 0; i < arShowItems.length;i++){
+                for (let i = 0; i < arShowItems.length; i++) {
                     arShowItems[i].classList.add('hidden')
                 }
-                /*
-                arShowItems.forEach(el => {
-                    el.classList.add('hidden')
-                })*/
+
                 this.innerHTML = "Показать все"
                 this.classList.remove('open')
             } else {
-                for(let i = 0; i < arShowItems.length;i++){
+                for (let i = 0; i < arShowItems.length; i++) {
                     arShowItems[i].classList.remove('hidden')
                 }
-                /*
-                arShowItems.forEach(el => {
-                    el.classList.remove('hidden')
-                })
-                 */
                 this.innerHTML = "Скрыть последние"
                 this.classList.add('open')
             }
         })
     }
-/*
-    showAllBtn.forEach(elem => {
-        elem.addEventListener('click', function (e) {
-            let arShowItems = getSiblings(this, 'mask').siblingsByClass
+    /*
+        showAllBtn.forEach(elem => {
+            elem.addEventListener('click', function (e) {
+                let arShowItems = getSiblings(this, 'mask').siblingsByClass
 
-            if (this.classList.contains('open')) {
-                arShowItems.forEach(el => {
-                    el.classList.add('hidden')
-                })
-                this.innerHTML = "Показать все"
-                this.classList.remove('open')
-            } else {
-                arShowItems.forEach(el => {
-                    el.classList.remove('hidden')
-                })
-                this.innerHTML = "Скрыть последние"
-                this.classList.add('open')
-            }
+                if (this.classList.contains('open')) {
+                    arShowItems.forEach(el => {
+                        el.classList.add('hidden')
+                    })
+                    this.innerHTML = "Показать все"
+                    this.classList.remove('open')
+                } else {
+                    arShowItems.forEach(el => {
+                        el.classList.remove('hidden')
+                    })
+                    this.innerHTML = "Скрыть последние"
+                    this.classList.add('open')
+                }
+            })
         })
-    })
 
 
-    /* ASIDE ACCORDION
+        /* ASIDE ACCORDION
 
-    let accordionBtn = document.querySelectorAll('.js-accordion-btn');
+        let accordionBtn = document.querySelectorAll('.js-accordion-btn');
 
-    for (let i = 0; i < accordionBtn.length; i++) {
-        const element = accordionBtn[i];
-        element.addEventListener('click', function (e) {
-            let accordionContent = this.nextElementSibling;
-            if (this.classList.contains('active')) {
-                accordionContent.classList.remove('open');
-                this.classList.remove('active');
-            } else {
-                accordionContent.classList.add('open');
-                this.classList.add('active');
-            }
-        })
-    }
-/*
-    function handleChange(input, min, max) {
-        input.value = input.value.replace(/[^0-9]/g, '');
-        if (+input.value < min) input.value = min;
-        if (+input.value > max) input.value = max;
-    }
+        for (let i = 0; i < accordionBtn.length; i++) {
+            const element = accordionBtn[i];
+            element.addEventListener('click', function (e) {
+                let accordionContent = this.nextElementSibling;
+                if (this.classList.contains('active')) {
+                    accordionContent.classList.remove('open');
+                    this.classList.remove('active');
+                } else {
+                    accordionContent.classList.add('open');
+                    this.classList.add('active');
+                }
+            })
+        }
+    /*
+        function handleChange(input, min, max) {
+            input.value = input.value.replace(/[^0-9]/g, '');
+            if (+input.value < min) input.value = min;
+            if (+input.value > max) input.value = max;
+        }
 
-    let inputNumber = document.querySelectorAll('.js-input-wrap input')
-    inputNumber.forEach(el => {
-        el.addEventListener('keyup', function () {
-            let minValue = el.getAttribute('data-min')
-            let maxValue = el.getAttribute('data-max')
-            handleChange(el, minValue, maxValue)
-        })
-    })*/
+        let inputNumber = document.querySelectorAll('.js-input-wrap input')
+        inputNumber.forEach(el => {
+            el.addEventListener('keyup', function () {
+                let minValue = el.getAttribute('data-min')
+                let maxValue = el.getAttribute('data-max')
+                handleChange(el, minValue, maxValue)
+            })
+        })*/
 
     /* VIDEO */
     function findVideos() {
@@ -791,20 +777,6 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
-    /*
-    selectrics.forEach(el => {
-        el.addEventListener('click', function () {
-            show(this)
-        })
-    })
-    
-    options.forEach(el => {
-        el.addEventListener('click', function () {
-            select(this)
-            formDelivery = this.innerHTML;
-        })
-    })
-*/
     function show(context) {
         let selectbox = context.querySelector(".selectric-options");
         // visible
@@ -871,7 +843,7 @@ window.addEventListener('DOMContentLoaded', () => {
             let countBtn = el.querySelectorAll('.js-basket-count-btn')
             let countInput = el.querySelector('.js-basket-count-input')
             let basketCost = el.querySelector('.basket-item__cost')
-            let basketDelete = el.querySelector('.js-basket-del')
+            let basketDelete = el.querySelector('.product-remove')
             let oldCost = basketCost.querySelector('.basket-item__old');
             let curCost = basketCost.querySelector('.basket-item__new');
             let curDiscount = el.dataset.basketDiscount;
@@ -924,36 +896,39 @@ window.addEventListener('DOMContentLoaded', () => {
             });
 
             // УАЛЕНИЕ ТОВАРА ИЗ КОРЗИНЫ
-            basketDelete.addEventListener('click', function () {
-                this.parentNode.parentNode.parentNode.remove()
+            if (basketDelete) {
+                basketDelete.addEventListener('click', function () {
+                    this.parentNode.parentNode.parentNode.remove()
 
-                totalDiscount[curId] = 0;
-                basketDiscount.innerHTML = formatMoney(sumSalaries(totalDiscount)) + ' ₽';
+                    totalDiscount[curId] = 0;
+                    basketDiscount.innerHTML = formatMoney(sumSalaries(totalDiscount)) + ' ₽';
 
-                totalPrice[curId] = 0;
-                basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
+                    totalPrice[curId] = 0;
+                    basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
 
 
-                //Сумма товаров
-                basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
-                if (sumSalaries(totalDiscount)) {
-                    basketSumOld.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDiscount) * -1) + ' ₽';
-                } else {
-                    basketSumOld.innerHTML = '';
-                }
-                //ИТОГО
-                basketTotal.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDelivery)) + ' ₽';
+                    //Сумма товаров
+                    basketSum.innerHTML = formatMoney(sumSalaries(totalPrice)) + ' ₽';
+                    if (sumSalaries(totalDiscount)) {
+                        basketSumOld.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDiscount) * -1) + ' ₽';
+                    } else {
+                        basketSumOld.innerHTML = '';
+                    }
+                    //ИТОГО
+                    basketTotal.innerHTML = formatMoney(sumSalaries(totalPrice) + sumSalaries(totalDelivery)) + ' ₽';
 
-                if (document.querySelectorAll('.basket-item').length <= 0) {
-                    document.getElementById("basket").style.display = "none";
-                    document.querySelector('.basket-items__title').style.display = "none";
-                    document.querySelector('.basket-items').innerHTML = `<h2 style="text-align: center; margin: 30px 0;">Ваша корзина пуста.</h2>  
+                    if (document.querySelectorAll('.basket-item').length <= 0) {
+                        document.getElementById("basket").style.display = "none";
+                        document.querySelector('.basket-items__title').style.display = "none";
+                        document.querySelector('.basket-items').innerHTML = `<h2 style="text-align: center; margin: 30px 0;">Ваша корзина пуста.</h2>  
                     <a href="/catalog" style="color: #0467FB;display: block;text-align: center;font-size: 18px;font-weight: 500;" >Вернуться в каталог</a>`;
-                } else {
-                    document.getElementById("basket").style.display = "block";
-                    //document.querySelector('.basket-items__title').style.display = "flex";
-                }
-            })
+                    } else {
+                        document.getElementById("basket").style.display = "block";
+                        //document.querySelector('.basket-items__title').style.display = "flex";
+                    }
+                })
+            }
+
 
         });
 
@@ -962,98 +937,99 @@ window.addEventListener('DOMContentLoaded', () => {
         let phoneField = document.querySelector('[name="phone"]');
         let phoneResponse = document.querySelector('.js-respose-phone')
         let phoneValid = false;
+        if (phoneField) {
+            phoneField.addEventListener("focus", function () {
+                var input = phoneField,
+                    atr = "+7 (___) ___-__-__",
+                    pat = new RegExp("_"),
+                    target = event.target;
 
-        phoneField.addEventListener("focus", function () {
-            var input = phoneField,
-                atr = "+7 (___) ___-__-__",
-                pat = new RegExp("_"),
-                target = event.target;
-
-            input.setAttribute("value", atr);
-        });
-
-        phoneField.addEventListener("keyup", function () {
-            var input = phoneField,
-                atr = "+7 (___) ___-__-__",
-                pat = new RegExp("_"),
-                target = event.target;
-
-            if (!pat.test(input.value)) {
-                phoneResponse.innerHTML = 'Телефон введен верно'
-                phoneResponse.style.color = '#009800'
-                phoneValid = true;
-            }
-        })
-        phoneField.addEventListener("blur", function () {
-            var input = phoneField,
-                atr = "+7 (___) ___-__-__",
-                pat = new RegExp("_"),
-                target = event.target;
-
-            if (pat.test(input.value)) {
-                input.setAttribute("value", "");
-                phoneResponse.innerHTML = 'Поле не должно быть пустым'
-                phoneResponse.style.color = 'red'
-                phoneValid = false;
-            } else {
-                phoneResponse.innerHTML = 'Телефон введен верно'
-                phoneResponse.style.color = '#009800'
-                phoneValid = true;
-            }
-        });
-
-
-        //input.setAttribute("value", atr);
-        phoneField.addEventListener("click", function (event) {
-            // Mask for telephone
-            function setCursorPosition(pos, elem) {
-                elem.focus();
-                if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
-                else if (elem.createTextRange) {
-                    var range = elem.createTextRange();
-                    range.collapse(false);
-                    range.moveEnd("character", pos);
-                    range.moveStart("character", pos);
-                    range.select();
-                }
-            }
-
-            function mask(event) {
-                var matrix = this.defaultValue,
-                    i = 0,
-                    def = matrix.replace(/\D/g, ""),
-                    val = this.value.replace(/\D/g, "");
-                // console.log('matrix: ' + matrix, 'i: ' + i, 'dev: ' + def, 'val: ' + val);
-                def.length >= val.length && (val = def);
-                matrix = matrix.replace(/[_\d]/g, function (a) {
-                    return val.charAt(i++) || "_";
-                });
-                this.value = matrix;
-                i = matrix.lastIndexOf(val.substr(-1));
-                i < matrix.length && matrix != this.defaultValue
-                    ? i++
-                    : (i = matrix.indexOf("_"));
-                setCursorPosition(i, this);
-            }
-
-            var input = phoneField;
-            input.addEventListener("input", mask, false);
-            var input = phoneField,
-                atr = "+7 (___) ___-__-__";
-
-            input.onfocus = function () {
                 input.setAttribute("value", atr);
-            };
+            });
 
-            //var isClickInside = input.contains(event.target);
-            var target = event.target,
-                pattern = "_"; // где был клик?
+            phoneField.addEventListener("keyup", function () {
+                var input = phoneField,
+                    atr = "+7 (___) ___-__-__",
+                    pat = new RegExp("_"),
+                    target = event.target;
 
-            if (target.id != 'phone' && pattern && pattern.test(input.value)) {
-                input.setAttribute("value", "");
-            }
+                if (!pat.test(input.value)) {
+                    phoneResponse.innerHTML = 'Телефон введен верно'
+                    phoneResponse.style.color = '#009800'
+                    phoneValid = true;
+                }
+            })
+            phoneField.addEventListener("blur", function () {
+                var input = phoneField,
+                    atr = "+7 (___) ___-__-__",
+                    pat = new RegExp("_"),
+                    target = event.target;
 
-        });
+                if (pat.test(input.value)) {
+                    input.setAttribute("value", "");
+                    phoneResponse.innerHTML = 'Поле не должно быть пустым'
+                    phoneResponse.style.color = 'red'
+                    phoneValid = false;
+                } else {
+                    phoneResponse.innerHTML = 'Телефон введен верно'
+                    phoneResponse.style.color = '#009800'
+                    phoneValid = true;
+                }
+            });
+
+
+            //input.setAttribute("value", atr);
+            phoneField.addEventListener("click", function (event) {
+                // Mask for telephone
+                function setCursorPosition(pos, elem) {
+                    elem.focus();
+                    if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+                    else if (elem.createTextRange) {
+                        var range = elem.createTextRange();
+                        range.collapse(false);
+                        range.moveEnd("character", pos);
+                        range.moveStart("character", pos);
+                        range.select();
+                    }
+                }
+
+                function mask(event) {
+                    var matrix = this.defaultValue,
+                        i = 0,
+                        def = matrix.replace(/\D/g, ""),
+                        val = this.value.replace(/\D/g, "");
+                    // console.log('matrix: ' + matrix, 'i: ' + i, 'dev: ' + def, 'val: ' + val);
+                    def.length >= val.length && (val = def);
+                    matrix = matrix.replace(/[_\d]/g, function (a) {
+                        return val.charAt(i++) || "_";
+                    });
+                    this.value = matrix;
+                    i = matrix.lastIndexOf(val.substr(-1));
+                    i < matrix.length && matrix != this.defaultValue
+                        ? i++
+                        : (i = matrix.indexOf("_"));
+                    setCursorPosition(i, this);
+                }
+
+                var input = phoneField;
+                input.addEventListener("input", mask, false);
+                var input = phoneField,
+                    atr = "+7 (___) ___-__-__";
+
+                input.onfocus = function () {
+                    input.setAttribute("value", atr);
+                };
+
+                //var isClickInside = input.contains(event.target);
+                var target = event.target,
+                    pattern = "_"; // где был клик?
+
+                if (target.id != 'phone' && pattern && pattern.test(input.value)) {
+                    input.setAttribute("value", "");
+                }
+
+            });
+        }
 
 
         // ФОРМА - E-MAIL
@@ -1067,47 +1043,52 @@ window.addEventListener('DOMContentLoaded', () => {
         let emailField = document.querySelector('[name="email"]');
         let emailResponse = document.querySelector('.js-respose-email')
         let emailValid = false;
+        if (emailField) {
+            emailField.addEventListener('keyup', function () {
+                let email = this.value;
+                if (validateEmail(email)) {
+                    emailResponse.innerHTML = "E-mail введен верно";
+                    emailResponse.style.color = '#009800';
+                    emailValid = true;
+                }
+            })
 
-        emailField.addEventListener('keyup', function () {
-            let email = this.value;
-            if (validateEmail(email)) {
-                emailResponse.innerHTML = "E-mail введен верно";
-                emailResponse.style.color = '#009800';
-                emailValid = true;
-            }
-        })
+            emailField.addEventListener('blur', function () {
+                let email = this.value;
+                if (validateEmail(email)) {
+                    emailResponse.innerHTML = "E-mail введен верно";
+                    emailResponse.style.color = '#009800';
+                    emailValid = true;
+                } else {
+                    emailResponse.innerHTML = "Введите корректный E-mail";
+                    emailResponse.style.color = 'red';
+                    emailValid = false;
+                }
+            })
 
-        emailField.addEventListener('blur', function () {
-            let email = this.value;
-            if (validateEmail(email)) {
-                emailResponse.innerHTML = "E-mail введен верно";
-                emailResponse.style.color = '#009800';
-                emailValid = true;
-            } else {
-                emailResponse.innerHTML = "Введите корректный E-mail";
-                emailResponse.style.color = 'red';
-                emailValid = false;
-            }
-        })
+        }
+        if (formElem) {
+            formElem.addEventListener('submit', function (e) {
+                e.preventDefault()
+                let formData = new FormData(this);
+                let formBasket = [];
+                let basketItems = document.querySelectorAll('.basket-item');
 
-        formElem.addEventListener('submit', function (e) {
-            e.preventDefault()
-            let formData = new FormData(this);
-            let formBasket = [];
-            let basketItems = document.querySelectorAll('.basket-item');
+                basketItems.forEach(element => {
+                    formBasket.push(element.dataset.basketId)
+                });
 
-            basketItems.forEach(element => {
-                formBasket.push(element.dataset.basketId)
-            });
+                formData.append('delivery', formDelivery)
+                formData.append('basket-items', formBasket)
 
-            formData.append('delivery', formDelivery)
-            formData.append('basket-items', formBasket)
+                if (phoneValid && emailValid) {
+                    console.log(...formData)
+                }
 
-            if (phoneValid && emailValid) {
-                console.log(...formData)
-            }
+            })
 
-        })
+        }
+
     }
 });
 

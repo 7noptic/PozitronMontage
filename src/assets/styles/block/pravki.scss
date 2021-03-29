@@ -82,3 +82,30 @@ input[type=number]::-webkit-outer-spin-button {
       }
   }
 }
+#wpcf7-f1501-o1{
+    p{
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-between;
+        span{
+            width: 48%;
+        }
+    }
+}
+
+@media screen and (max-width: 991px){
+    #wpcf7-f1501-o1{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 575px){
+    #wpcf7-f1501-o1{
+        p{
+            flex-wrap: wrap;
+            span{
+                width: 100%;
+            }
+        }
+    }
+}

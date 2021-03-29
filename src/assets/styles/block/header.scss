@@ -204,6 +204,7 @@
 
   &__basket {
     flex-wrap: wrap;
+    justify-content: flex-end;
 
     &:hover {
       color: $blue;
