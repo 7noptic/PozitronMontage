@@ -74,6 +74,64 @@ window.addEventListener('DOMContentLoaded', () => {
     } else {
         regionBtn.innerHTML = 'Москва';
     }
+    let card = document.querySelectorAll('.card__item'),
+        cardPrice = document.querySelectorAll('.js-card-price'),
+        cardName = document.querySelectorAll('.card__name'),
+        cardImg = document.querySelectorAll('.card__img'),
+
+        modalOneClickImg = document.querySelector('.modal-one-click__img'),
+        modalOneClickName = document.querySelector('.modal-one-click__name'),
+        modalOneClickPrice = document.querySelector('.modal-one-click__price'),
+        modalOneClickBtn = document.querySelectorAll('.js-card-one-click'),
+
+        modalInputName = document.querySelector('#js-modal-one-click-name'),
+        modalInputPrice = document.querySelector('#js-modal-one-click-price'),
+        modalInputUrl = document.querySelector('#js-modal-one-click-url'),
+        oneCardParent = document.querySelector('.card-block'),
+        oneCardName = document.querySelector('.hit__title'),
+        oneCardPrice = document.querySelector('.card__price'),
+        oneCardImg = document.querySelector('.card__img');
+
+
+
+
+    getCardInfoToModalOneClick(card);
+
+    function getCardInfoToModalOneClick(card) {
+        for(let i=0; i < card.length; i++) {
+            modalOneClickBtn[i].onclick = function(x) {
+                return function() {
+                    if(oneCardParent){
+                        console.log('work');
+                        modalOneClickName.innerHTML = oneCardName.innerHTML;
+                        modalInputName.value = oneCardName.innerHTML
+
+                        modalOneClickPrice.innerHTML = oneCardPrice.innerHTML;
+                        modalInputPrice.value = oneCardPrice.innerHTML;
+
+
+                        modalOneClickImg.childNodes[1].src = oneCardImg.childNodes[1].src;
+                        modalInputUrl.value =  window.location;
+                    }
+                    else{
+                        modalOneClickName.innerHTML = cardName[i].innerHTML;
+                        modalInputName.value = cardName[i].innerHTML
+
+                        modalOneClickPrice.innerHTML = cardPrice[i].innerHTML;
+                        modalInputPrice.value = cardPrice[i].innerHTML;
+
+
+                        modalOneClickImg.childNodes[1].src = cardImg[i].childNodes[1].src;
+                        modalInputUrl.value = cardName[i].href;
+                    }
+
+
+                }
+            }(i)
+
+        }
+
+    }
     document.addEventListener('click', e => {
 
         let target = e.target;
@@ -81,9 +139,11 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target && (target.classList.contains('js-call') || target.classList.contains('modal-call__exit'))) {
             openCloseModal(e, modalCall);
         }
+
         if (target && (target.classList.contains('js-card-one-click') || target.classList.contains('modal-one-click__exit'))) {
             openCloseModal(e, modalOneClick);
         }
+
         if (target && (target.classList.contains('js-job') || target.classList.contains('modal-job__exit'))) {
             openCloseModal(e, modalJob);
         }
@@ -693,7 +753,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     findVideos();
-    /* Reviews Stars 
+    /* Reviews Stars
 
     let starsContainer = document.querySelector('.card__rate');
     let str = '';
@@ -767,6 +827,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < selectrics.length; i++) {
         selectrics[i].addEventListener('click', function () {
+            alert('work');
             show(this)
         })
     }
